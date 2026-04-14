@@ -28,6 +28,9 @@ export default function RootLayout({
 					__html: `(function(){try{var stored=localStorage.getItem('theme-preference');var hasStored=stored==='light'||stored==='dark';var systemDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var theme=hasStored?stored:(systemDark?'dark':'light');var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(theme)}catch(e){}})()`,
 				}}
 			/>
+
+
+			
 			<GoogleAnalytics gaId="G-WKBDP55SD0" />
 			<GoogleTagManager gtmId="G-WKBDP55SD0" />
 			<body className='min-h-full flex flex-col bg-background text-foreground'>
