@@ -4,6 +4,10 @@ import { SectionCard } from '@/components/site/section-card'
 import { SiteShell } from '@/components/site/site-shell'
 import { coreCompetencies, experience, profile } from '@/lib/resume-data'
 
+import { faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function Page () {
 	return (
 		<SiteShell>
@@ -19,20 +23,40 @@ export default function Page () {
 				<p className='max-w-3xl text-base leading-7 text-zinc-700'>
 					{profile.summary}
 				</p>
-				<div className='flex flex-wrap gap-4 text-sm'>
+				<div className='flex flex-wrap items-center gap-5 text-sm'>
 					<Link
 						href={profile.github}
 						target='_blank'
 						rel='noreferrer'
-						className='text-zinc-600 transition-colors hover:text-zinc-900'
+						aria-label='GitHub'
+						className='inline-flex text-[#181717] transition-opacity hover:opacity-80'
 					>
-						GitHub
+						<FontAwesomeIcon icon={faGithub} className='h-7 w-7' />
 					</Link>
 					<Link
 						href={`mailto:${profile.email}`}
-						className='text-zinc-600 transition-colors hover:text-zinc-900'
+						aria-label='Email'
+						className='inline-flex text-[#0078d4] transition-opacity hover:opacity-80'
 					>
-						{profile.email}
+						<FontAwesomeIcon icon={faEnvelope} className='h-7 w-7' />
+					</Link>
+					<Link
+						href={profile.linkedin}
+						target='_blank'
+						rel='noreferrer'
+						aria-label='LinkedIn'
+						className='inline-flex text-[#0a66c2] transition-opacity hover:opacity-80'
+					>
+						<FontAwesomeIcon icon={faLinkedin} className='h-7 w-7' />
+					</Link>
+					<Link
+						href={profile.twitter}
+						target='_blank'
+						rel='noreferrer'
+						aria-label='X'
+						className='inline-flex text-black transition-opacity hover:opacity-80'
+					>
+						<FontAwesomeIcon icon={faXTwitter} className='h-7 w-7' />
 					</Link>
 				</div>
 			</section>

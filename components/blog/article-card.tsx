@@ -34,7 +34,6 @@ export function ArticleCard ({
 					<p key={paragraph}>{paragraph}</p>
 				))}
 			</div>
-
 			<Link
 				href={href}
 				className='mt-7 inline-block text-sm font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500'

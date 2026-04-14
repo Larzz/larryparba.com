@@ -23,15 +23,13 @@ export function SiteShell ({ children }: SiteShellProps) {
 	return (
 		<div className='mx-auto flex w-full max-w-4xl flex-1 flex-col px-6 py-10 sm:px-8'>
 			<header className='border-b border-zinc-200 pb-6'>
-				<div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
-					<Link href='/' className='text-lg font-semibold tracking-tight text-zinc-900'>
-						larryparba.com
-					</Link>
-
-					<nav aria-label='Main navigation' className='flex flex-wrap gap-2 text-sm'>
+				<div className='flex justify-center'>
+					<nav
+						aria-label='Main navigation'
+						className='flex flex-wrap justify-center gap-2 text-sm'
+					>
 						{navItems.map((item) => {
 							const isActive = pathname === item.href
-
 							return (
 								<Link
 									key={item.href}

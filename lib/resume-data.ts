@@ -11,6 +11,7 @@ export interface ProjectItem {
 	name: string
 	url: string
 	description: string
+	technologies: string[]
 }
 
 export const profile = {
@@ -22,6 +23,8 @@ export const profile = {
 	summary:
 		'Senior Web Application Developer with 9+ years of experience designing and scaling web systems across e-commerce and enterprise platforms, with strong expertise in Laravel, REST APIs, and AI-integrated workflows.',
 	education: 'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
+	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/',
+	twitter: 'https://x.com/Larry_Parba',
 }
 
 export const coreCompetencies = [
@@ -47,6 +50,8 @@ export const experience: ExperienceItem[] = [
 			'Led backend and full-stack development across enterprise and e-commerce projects while serving as the technical escalation point for infrastructure and production incidents.',
 		highlights: [
 			'Led multiple production server migrations with zero data loss.',
+			'Manage emails and domains for clients.',
+			'Manage server and DNS configurations.',
 			'Resolved critical website attacks and improved security configurations.',
 			'Architected custom database schemas for high-volume client platforms.',
 			'Integrated payment, AI, and enterprise APIs.',
@@ -86,34 +91,64 @@ export const experience: ExperienceItem[] = [
 
 export const featuredProjects: ProjectItem[] = [
 	{
+		name: 'Vijit Pillai Art',
+		url: 'https://vijitpillai.com',
+		description: 'Custom e-commerce art gallery with payment integration and CMS-driven content management.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Stripe'],
+	},
+	{
+		name: 'Adio Luxury',
+		url: 'https://adioluxury.ae',
+		description: 'Luxury brand website with dynamic forms and admin-controlled content using Inertia.js architecture.',
+		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
+	},	
+	{
+		name: 'Mowasalat',
+		url: 'https://mowasalat.ae',
+		description: 'Government service platform with multi-form registration system and backend validation workflows.',
+		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
+	},
+	{
+		name: 'Tip2gether',
+		url: 'https://tip2get.com',
+		description: 'Sports team coordination platform with user interaction and real-time data handling.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Pusher'],
+	},
+	{
 		name: 'KMK Perfumes',
 		url: 'https://kmkperfumes.com',
-		description: 'E-commerce implementation and platform optimization.',
+		description: 'E-commerce platform with product management, checkout flow, and performance optimization.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Payment Gateway'],
 	},
 	{
 		name: 'Trans Gulf',
 		url: 'https://transgulf.ae',
-		description: 'Business web platform with backend integrations.',
+		description: 'Corporate website with service listings, lead generation forms, and CMS integration.',
+		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Eurostar Rental',
 		url: 'https://eurostarrental.com',
-		description: 'Service platform support and feature development.',
+		description: 'Vehicle rental platform with booking system and backend service management.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Mercato Shopping Mall',
 		url: 'https://mercatoshoppingmall.com',
-		description: 'High-traffic website support and enhancements.',
+		description: 'High-traffic retail website with promotional content, events, and performance enhancements.',
+		technologies: ['WordPress', 'PHP', 'jQuery', 'MySQL', 'Google Analytics'],
 	},
 	{
 		name: 'Soporella',
 		url: 'https://soporella.com',
-		description: 'Client-focused site development and maintenance.',
+		description: 'Brand-focused website with custom UI components and content management.',
+		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Shop Mesco',
 		url: 'https://shopmesco.com',
-		description: 'Commerce functionality and backend support.',
+		description: 'Online store with catalog management, checkout system, and backend integrations.',
+		technologies: ['Shopify', 'Liquid', 'JavaScript', 'Payment Gateway'],
 	},
 ]
 

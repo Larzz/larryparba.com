@@ -26,6 +26,11 @@ export default function ProjectsPage () {
 						<p className='mt-2 text-sm leading-6 text-zinc-700'>
 							{project.description}
 						</p>
+						<ul className='mt-4 space-y-2 text-sm text-zinc-700'>
+							{project.technologies.map((technology) => (
+								<li key={technology}>- {technology}</li>
+							))}
+						</ul>
 						<Link
 							href={project.url}
 							target='_blank'
