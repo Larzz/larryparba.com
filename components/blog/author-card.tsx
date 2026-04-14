@@ -22,29 +22,29 @@ export function AuthorCard ({
 	links,
 }: AuthorCardProps) {
 	return (
-		<section className='rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm'>
+		<section className='rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-6 shadow-sm'>
 			<div className='flex items-center gap-4'>
 				<Image
 					src={avatarSrc}
 					alt={name}
 					width={72}
 					height={72}
-					className='rounded-full border border-zinc-200 object-cover'
+					className='rounded-full border border-zinc-200 dark:border-zinc-800 object-cover'
 				/>
 				<div>
-					<h2 className='text-base font-semibold text-zinc-900'>{name}</h2>
-					<p className='text-sm text-zinc-500'>{role}</p>
+					<h2 className='text-base font-semibold text-zinc-900 dark:text-zinc-100'>{name}</h2>
+					<p className='text-sm text-zinc-500 dark:text-zinc-400'>{role}</p>
 				</div>
 			</div>
 
-			<p className='mt-4 text-sm leading-6 text-zinc-600'>{bio}</p>
+			<p className='mt-4 text-sm leading-6 text-zinc-600 dark:text-zinc-300'>{bio}</p>
 
-			<div className='mt-4 flex flex-wrap gap-3 border-t border-zinc-100 pt-4'>
+			<div className='mt-4 flex flex-wrap gap-3 border-t border-zinc-100 dark:border-zinc-800 pt-4'>
 				{links.map((link) => (
 					<Link
 						key={link.href}
 						href={link.href}
-						className='text-sm text-zinc-600 transition-colors hover:text-zinc-900'
+						className='text-sm text-zinc-600 dark:text-zinc-300 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100'
 					>
 						{link.label}
 					</Link>

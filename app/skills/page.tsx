@@ -14,8 +14,8 @@ export default function SkillsPage () {
 	return (
 		<SiteShell>
 			<section>
-				<h1 className='text-3xl font-bold tracking-tight text-zinc-900'>Skills</h1>
-				<p className='mt-3 max-w-3xl text-base leading-7 text-zinc-700'>
+				<h1 className='text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100'>Skills</h1>
+				<p className='mt-3 max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200'>
 					Technology stack and capabilities used to deliver reliable web
 					products.
 				</p>
@@ -25,10 +25,10 @@ export default function SkillsPage () {
 				{skillSections.map((section) => (
 					<div
 						key={section.title}
-						className='rounded-xl border border-zinc-200 bg-white p-5 shadow-sm'
+						className='rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-5 shadow-sm'
 					>
-						<h2 className='text-lg font-semibold text-zinc-900'>{section.title}</h2>
-						<ul className='mt-3 space-y-2 text-sm text-zinc-700'>
+						<h2 className='text-lg font-semibold text-zinc-900 dark:text-zinc-100'>{section.title}</h2>
+						<ul className='mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-200'>
 							{section.items.map((item) => (
 								<li key={item}>- {item}</li>
 							))}

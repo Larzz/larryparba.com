@@ -22,7 +22,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 
 	return (
 		<div className='mx-auto flex w-full max-w-4xl flex-1 flex-col px-6 py-10 sm:px-8'>
-			<header className='border-b border-zinc-200 pb-6'>
+			<header className='border-b border-zinc-200 pb-6 dark:border-zinc-800'>
 				<div className='flex justify-center'>
 					<nav
 						aria-label='Main navigation'
@@ -37,8 +37,8 @@ export function SiteShell ({ children }: SiteShellProps) {
 									className={[
 										'rounded-md px-3 py-1.5 transition-colors',
 										isActive
-											? 'bg-zinc-900 text-white'
-											: 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900',
+											? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+											: 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100',
 									].join(' ')}
 									aria-current={isActive ? 'page' : undefined}
 								>

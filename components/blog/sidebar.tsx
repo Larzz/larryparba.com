@@ -34,7 +34,7 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 			<button
 				type='button'
 				onClick={() => setIsOpen((prev) => !prev)}
-				className='fixed left-4 top-4 z-50 inline-flex items-center rounded-md border border-zinc-200 bg-white p-2 text-zinc-700 shadow-sm lg:hidden'
+				className='fixed left-4 top-4 z-50 inline-flex items-center rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-2 text-zinc-700 dark:text-zinc-200 shadow-sm lg:hidden'
 				aria-label='Toggle navigation menu'
 				aria-expanded={isOpen}
 			>
@@ -56,7 +56,7 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 
 			<aside
 				className={[
-					'fixed inset-y-0 left-0 z-40 w-72 border-r border-zinc-200 bg-white px-8 py-10 shadow-sm transition-transform duration-200',
+					'fixed inset-y-0 left-0 z-40 w-72 border-r border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 px-8 py-10 shadow-sm transition-transform duration-200',
 					'lg:translate-x-0',
 					isOpen ? 'translate-x-0' : '-translate-x-full',
 				].join(' ')}
@@ -65,14 +65,14 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 					<div>
 						<Link
 							href='/'
-							className='inline-flex items-center gap-3 border-b border-zinc-200 pb-6'
+							className='inline-flex items-center gap-3 border-b border-zinc-200 dark:border-zinc-800 pb-6'
 						>
-							<div className='h-8 w-8 rounded-sm border border-zinc-300 bg-zinc-100' />
+							<div className='h-8 w-8 rounded-sm border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800' />
 							<div>
-								<p className='text-sm font-semibold tracking-tight text-zinc-900'>
+								<p className='text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100'>
 									FREEK.DEV
 								</p>
-								<p className='text-xs text-zinc-500'>Laravel / PHP / AI</p>
+								<p className='text-xs text-zinc-500 dark:text-zinc-400'>Laravel / PHP / AI</p>
 							</div>
 						</Link>
 
@@ -90,7 +90,7 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 													'block rounded-md px-3 py-2 text-sm transition-colors',
 													isActive
 														? 'bg-zinc-900 text-white'
-														: 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900',
+														: 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100',
 												].join(' ')}
 												aria-current={isActive ? 'page' : undefined}
 											>
@@ -103,17 +103,17 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 						</nav>
 					</div>
 
-					<div className='mt-auto border-t border-zinc-200 pt-6'>
+					<div className='mt-auto border-t border-zinc-200 dark:border-zinc-800 pt-6'>
 						<div className='space-y-2 text-sm'>
 							<Link
 								href='/search'
-								className='block text-zinc-600 transition-colors hover:text-zinc-900'
+								className='block text-zinc-600 dark:text-zinc-300 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100'
 							>
 								Search
 							</Link>
 							<Link
 								href='/advertising'
-								className='block text-zinc-600 transition-colors hover:text-zinc-900'
+								className='block text-zinc-600 dark:text-zinc-300 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100'
 							>
 								Advertising
 							</Link>
@@ -121,7 +121,7 @@ export function Sidebar ({ items, activeHref }: SidebarProps) {
 								href='https://x.com'
 								target='_blank'
 								rel='noreferrer'
-								className='inline-flex items-center gap-2 text-zinc-600 transition-colors hover:text-zinc-900'
+								className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-300 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100'
 							>
 								<XIcon />
 								<span>X</span>

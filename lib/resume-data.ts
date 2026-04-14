@@ -29,6 +29,8 @@ export const profile = {
 
 export const coreCompetencies = [
 	'Scalable Backend Architecture (Laravel, MVC Design Patterns)',
+	'Manage server and DNS configurations.',
+	'Manage email systems. (microsoft 365, google workspace, etc.)',
 	'REST API Development & Third-Party Integrations',
 	'AI API Integration & Intelligent Workflow Automation',
 	'Vue.js & React.js Component-Based Frontend Development',

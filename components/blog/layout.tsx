@@ -22,14 +22,14 @@ const navItems = [
 
 export function Layout ({ children, rightSidebar }: BlogLayoutProps) {
 	return (
-		<div className='min-h-screen bg-zinc-50 text-zinc-900'>
+		<div className='min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100'>
 			<Sidebar items={navItems} activeHref='/' />
 
 			<div className='mx-auto max-w-[1500px] px-4 pb-12 pt-20 lg:pl-80 lg:pr-8 lg:pt-12'>
 				<div className='grid grid-cols-1 gap-10 xl:grid-cols-[1fr_340px]'>
 					<main>{children}</main>
 
-					<aside className='space-y-6 border-t border-zinc-200 pt-8 xl:border-l xl:border-t-0 xl:pl-8 xl:pt-0'>
+					<aside className='space-y-6 border-t border-zinc-200 dark:border-zinc-800 pt-8 xl:border-l xl:border-t-0 xl:pl-8 xl:pt-0'>
 						{rightSidebar}
 					</aside>
 				</div>
