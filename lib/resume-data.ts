@@ -17,76 +17,76 @@ export interface ProjectItem {
 export const profile = {
 	name: 'Larry Candelaria Parba',
 	title:
-		'Web Application Developer | Laravel, Vue.js, React.js & AI-Integrated Systems Specialist',
+		'Senior Full-Stack Web Developer | Laravel, Vue.js, React.js | Backend Systems & API Architect',
 	email: 'larry.parba@outlook.com',
 	github: 'https://github.com/Larzz',
 	summary:
-		'Senior Web Application Developer with 9+ years of experience designing and scaling web systems across e-commerce and enterprise platforms, with strong expertise in Laravel, REST APIs, and AI-integrated workflows.',
-	education: 'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
+		'Senior Full-Stack Web Developer with 9+ years of experience building scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects. Specialized in Laravel architecture, RESTful APIs, system optimization, and integrating AI-driven automation into production workflows.',
+	education:
+		'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
 	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/',
 	twitter: 'https://x.com/Larry_Parba',
 }
 
 export const coreCompetencies = [
-	'Scalable Backend Architecture (Laravel, MVC Design Patterns)',
-	'Manage server and DNS configurations.',
-	'Manage email systems. (microsoft 365, google workspace, etc.)',
-	'REST API Development & Third-Party Integrations',
-	'AI API Integration & Intelligent Workflow Automation',
-	'Vue.js & React.js Component-Based Frontend Development',
-	'Database Design & Optimization (MySQL, MariaDB)',
-	'Server & DNS Management (cPanel, Email, Domain Configuration)',
-	'Performance Optimization & Debugging',
-	'Payment Gateway Integration',
-	'Production Incident Resolution',
-	'Client Technical Communication & Requirements Analysis',
+	'Scalable Backend Architecture (Laravel, MVC, Modular Systems)',
+	'REST API Design & Third-Party Integrations',
+	'Database Design, Optimization & Query Performance (MySQL, MariaDB)',
+	'AI API Integration & Workflow Automation Systems',
+	'Frontend Development (Vue.js, React.js, Component-Based Architecture)',
+	'Payment Gateway Integration (Stripe, Custom Gateways)',
+	'Production Systems Debugging & Incident Resolution',
+	'Server, DNS & Email Infrastructure Management (cPanel, Microsoft 365, Google Workspace)',
+	'Performance Optimization (Caching, Query Optimization, Load Reduction)',
+	'Legacy System Refactoring & Modernization',
+	'Technical Client Communication & Requirements Analysis',
 ]
 
 export const experience: ExperienceItem[] = [
 	{
 		company: 'Creativo DMCC',
-		role: 'Application Developer',
+		role: 'Senior Application Developer',
 		location: 'Dubai, UAE',
 		period: 'June 2019 - 2026',
 		summary:
-			'Led backend and full-stack development across enterprise and e-commerce projects while serving as the technical escalation point for infrastructure and production incidents.',
+			'Led full-stack development and backend architecture for enterprise-grade systems, e-commerce platforms, and production infrastructure. Acted as technical lead for deployments, security incidents, and system scalability.',
 		highlights: [
-			'Led multiple production server migrations with zero data loss.',
-			'Manage emails and domains for clients.',
-			'Manage server and DNS configurations.',
-			'Resolved critical website attacks and improved security configurations.',
-			'Architected custom database schemas for high-volume client platforms.',
-			'Integrated payment, AI, and enterprise APIs.',
-			'Implemented AI-powered automation workflows for content and operations.',
-			'Mentored junior developers and reviewed code quality.',
+			'Led multiple production migrations and deployments with zero-downtime execution.',
+			'Designed and maintained scalable Laravel-based backend architectures for high-traffic systems.',
+			'Managed production infrastructure including servers, DNS, and enterprise email systems (Microsoft 365, Google Workspace).',
+			'Resolved critical security incidents including website attacks and system vulnerabilities.',
+			'Built and integrated AI-powered automation workflows for content and operational efficiency.',
+			'Developed and optimized database schemas for performance-critical applications.',
+			'Integrated payment gateways and external APIs for enterprise platforms.',
+			'Mentored junior developers and enforced code quality standards across projects.',
 		],
 	},
 	{
 		company: 'Almani Lighting',
-		role: 'IT Engineer',
+		role: 'IT Engineer / Web Developer',
 		location: 'Dubai, UAE',
 		period: 'Aug 2018 - June 2019',
 		summary:
-			'Maintained and improved a Laravel e-commerce platform while supporting company-wide IT systems.',
+			'Maintained and enhanced a Laravel-based e-commerce platform and supported internal IT systems and infrastructure.',
 		highlights: [
-			'Improved application performance and modularized Vue.js components.',
-			'Developed product launch landing pages.',
-			'Assisted backend enhancements and third-party integrations.',
-			'Supported internal workflow automation and IT troubleshooting.',
+			'Improved frontend performance and refactored Vue.js components for maintainability.',
+			'Developed marketing landing pages and campaign-driven web modules.',
+			'Implemented backend enhancements and third-party service integrations.',
+			'Supported IT infrastructure, troubleshooting, and internal workflow automation.',
 		],
 	},
 	{
 		company: 'Contrib',
 		role: 'Web Developer',
 		location: 'Philippines',
-		period: 'Jan 2016 - March 2018',
+		period: 'Jan 2016 - Mar 2018',
 		summary:
-			'Worked on large-scale PHP systems managing over 20K domains.',
+			'Worked on large-scale PHP systems managing domain infrastructure and internal tooling for automation and operations.',
 		highlights: [
-			'Built a custom lightweight PHP framework for internal use.',
-			'Developed backend modules and domain management tools.',
-			'Converted UI/UX mockups into production-ready features.',
-			'Stabilized legacy codebases through targeted debugging and refactoring.',
+			'Built internal PHP-based tools and lightweight framework components for system operations.',
+			'Developed backend modules for managing large-scale domain systems (20K+ domains).',
+			'Converted UI/UX designs into production-ready web applications.',
+			'Performed legacy system debugging, refactoring, and stability improvements.',
 		],
 	},
 ]
@@ -95,75 +95,105 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Vijit Pillai Art',
 		url: 'https://vijitpillai.com',
-		description: 'Custom e-commerce art gallery with payment integration and CMS-driven content management.',
+		description:
+			'E-commerce art platform with CMS-driven content management, payment integration, and transactional order flow.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Stripe'],
 	},
 	{
 		name: 'Adio Luxury',
 		url: 'https://adioluxury.ae',
-		description: 'Luxury brand website with dynamic forms and admin-controlled content using Inertia.js architecture.',
+		description:
+			'Luxury brand platform built with Inertia.js architecture featuring dynamic admin-controlled content and form systems.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
-	},	
+	},
 	{
 		name: 'Mowasalat',
 		url: 'https://mowasalat.ae',
-		description: 'Government service platform with multi-form registration system and backend validation workflows.',
+		description:
+			'Government service registration system with multi-step form workflows, validation pipelines, and backend processing logic.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Tip2gether',
 		url: 'https://tip2get.com',
-		description: 'Sports team coordination platform with user interaction and real-time data handling.',
+		description:
+			'Real-time coordination platform for sports teams with event participation workflows and live data handling.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Pusher'],
 	},
 	{
 		name: 'KMK Perfumes',
 		url: 'https://kmkperfumes.com',
-		description: 'E-commerce platform with product management, checkout flow, and performance optimization.',
+		description:
+			'E-commerce system with product catalog management, checkout flow, and performance optimization enhancements.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Payment Gateway'],
 	},
 	{
 		name: 'Trans Gulf',
 		url: 'https://transgulf.ae',
-		description: 'Corporate website with service listings, lead generation forms, and CMS integration.',
+		description:
+			'Corporate website with CMS-driven service pages and lead generation system for business inquiries.',
 		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Eurostar Rental',
 		url: 'https://eurostarrental.com',
-		description: 'Vehicle rental platform with booking system and backend service management.',
+		description:
+			'Vehicle booking system with reservation workflows and backend fleet management logic.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Mercato Shopping Mall',
 		url: 'https://mercatoshoppingmall.com',
-		description: 'High-traffic retail website with promotional content, events, and performance enhancements.',
+		description:
+			'High-traffic retail platform optimized for events, promotions, and performance under heavy user load.',
 		technologies: ['WordPress', 'PHP', 'jQuery', 'MySQL', 'Google Analytics'],
 	},
 	{
 		name: 'Soporella',
 		url: 'https://soporella.com',
-		description: 'Brand-focused website with custom UI components and content management.',
+		description:
+			'Brand website with custom UI components and CMS-driven content architecture.',
 		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
 	},
 	{
 		name: 'Shop Mesco',
 		url: 'https://shopmesco.com',
-		description: 'Online store with catalog management, checkout system, and backend integrations.',
+		description:
+			'E-commerce store with catalog management, checkout flow, and backend integrations.',
 		technologies: ['Shopify', 'Liquid', 'JavaScript', 'Payment Gateway'],
 	},
 ]
 
 export const skills = {
 	backend: ['PHP', 'Laravel', 'CodeIgniter', 'Yii'],
+
 	frontend: ['Vue.js', 'React.js', 'JavaScript (ES6+)', 'Tailwind CSS'],
+
 	database: ['MySQL', 'MariaDB'],
+
+	system_design: [
+		'API Architecture',
+		'Scalable Backend Design',
+		'Legacy System Refactoring',
+	],
+
 	ai: [
 		'AI API Integration',
 		'Prompt Engineering',
 		'Workflow Automation',
 		'AI-Assisted Development Tools',
 	],
-	devops: ['cPanel', 'DNS Management', 'Email Systems', 'Git', 'GitHub'],
-	integrations: ['Payment Gateways', 'REST APIs', 'AI APIs', 'Third-Party Services'],
+
+	devops: [
+		'Server Management (cPanel, Linux basics)',
+		'DNS & Domain Configuration',
+		'Email Systems (Microsoft 365, Google Workspace)',
+		'Git Version Control',
+	],
+
+	integrations: [
+		'REST APIs',
+		'Payment Gateways',
+		'Third-Party SaaS Integrations',
+	],
 }

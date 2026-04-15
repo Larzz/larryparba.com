@@ -10,7 +10,7 @@ const navItems = [
 	{ href: '/experience', label: 'Experience' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/skills', label: 'Skills' },
-	{ href: '/contact', label: 'Contact' },
+	// { href: '/contact', label: 'Contact' },
 ]
 
 interface SiteShellProps {
