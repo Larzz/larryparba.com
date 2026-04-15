@@ -9,7 +9,7 @@ export default function ContactPage () {
 			<section>
 				<h1 className='text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100'>Contact</h1>
 				<p className='mt-3 max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200'>
-					Open to collaborations, consulting, and full-time opportunities.
+					Open to work, collaborations, consulting, and full-time opportunities. Please contact me if you have any questions or would like to discuss a project.
 				</p>
 			</section>
 
@@ -36,6 +36,32 @@ export default function ContactPage () {
 							github.com/Larzz
 						</Link>
 					</p>
+
+					<p>
+						LinkedIn:{' '}
+						<Link
+							href={profile.linkedin}
+							target='_blank'
+							rel='noreferrer'
+							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
+						>
+							linkedin.com/in/larry-parba-52509699/
+						</Link>
+					</p>
+
+					<p>
+						X:{' '}
+						<Link
+							href={profile.twitter}
+							target='_blank'
+							rel='noreferrer'
+							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
+						>
+							x.com/Larry_Parba
+						</Link>
+					</p>
+					
+					
 				</div>
 			</section>
 		</SiteShell>

@@ -19,6 +19,7 @@ interface SiteShellProps {
 
 export function SiteShell ({ children }: SiteShellProps) {
 	const pathname = usePathname()
+	const currentYear = new Date().getFullYear()
 
 	return (
 		<div className='mx-auto flex w-full max-w-4xl flex-1 flex-col px-6 py-10 sm:px-8'>
@@ -51,6 +52,17 @@ export function SiteShell ({ children }: SiteShellProps) {
 			</header>
 
 			<main className='py-10'>{children}</main>
+			<footer className='mt-auto border-t border-zinc-200 pt-6 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-300'>
+				<div className='flex flex-wrap items-center justify-between gap-3'>
+					<p>© {currentYear} Larry Parba. All rights reserved.</p>
+					<Link
+						href='mailto:larry.parba@outlook.com'
+						className='underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:decoration-zinc-700'
+					>
+						larry.parba@outlook.com
+					</Link>
+				</div>
+			</footer>
 		</div>
 	)
 }

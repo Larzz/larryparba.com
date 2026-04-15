@@ -35,6 +35,11 @@
   }
 }
 
+
+w-line {
+  width: calc(var(--spacing) * 20)
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
