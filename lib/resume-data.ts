@@ -5,6 +5,8 @@ export interface ExperienceItem {
 	period: string
 	summary: string
 	highlights: string[]
+	duration: string
+	logo: string
 }
 
 export interface ProjectItem {
@@ -48,6 +50,8 @@ export const experience: ExperienceItem[] = [
 		role: 'Senior Application Developer',
 		location: 'Dubai, UAE',
 		period: 'June 2019 - 2026',
+		duration: '7 years',
+		logo: 'companies/creativo.svg',
 		summary:
 			'Led full-stack development and backend architecture for enterprise-grade systems, e-commerce platforms, and production infrastructure. Acted as technical lead for deployments, security incidents, and system scalability.',
 		highlights: [
@@ -66,6 +70,8 @@ export const experience: ExperienceItem[] = [
 		role: 'IT Engineer / Web Developer',
 		location: 'Dubai, UAE',
 		period: 'Aug 2018 - June 2019',
+		duration: '10 months',
+		logo: 'companies/almani.webp',
 		summary:
 			'Maintained and enhanced a Laravel-based e-commerce platform and supported internal IT systems and infrastructure.',
 		highlights: [
@@ -80,6 +86,8 @@ export const experience: ExperienceItem[] = [
 		role: 'Web Developer',
 		location: 'Philippines',
 		period: 'Jan 2016 - Mar 2018',
+		duration: '2 years',
+		logo: 'companies/contrib.png',
 		summary:
 			'Worked on large-scale PHP systems managing domain infrastructure and internal tooling for automation and operations.',
 		highlights: [
@@ -169,12 +177,13 @@ export const skills = {
 
 	frontend: ['Vue.js', 'React.js', 'JavaScript (ES6+)', 'Tailwind CSS'],
 
-	database: ['MySQL', 'MariaDB'],
+	database: ['MySQL', 'MariaDB', 'Supabase'],
 
 	system_design: [
 		'API Architecture',
 		'Scalable Backend Design',
 		'Legacy System Refactoring',
+		'System Optimization',
 	],
 
 	ai: [
@@ -189,6 +198,7 @@ export const skills = {
 		'DNS & Domain Configuration',
 		'Email Systems (Microsoft 365, Google Workspace)',
 		'Git Version Control',
+		'Vercel'
 	],
 
 	integrations: [
@@ -197,3 +207,10 @@ export const skills = {
 		'Third-Party SaaS Integrations',
 	],
 }
+
+export const whyWorkWithMe: string[] = [
+	'I deliver production-ready code—carefully tested, documented, and deployed so everything runs smoothly beyond just my local setup.',
+	'I prioritize clear and open communication, with regular updates and straightforward explanations whenever needed.',
+	'I look beyond the immediate task, taking time to understand the “why” so we’re solving the right problem from the start.',
+	'I value your time by writing clean, maintainable code, providing clear pull requests, and documentation that’s easy to follow.',
+]

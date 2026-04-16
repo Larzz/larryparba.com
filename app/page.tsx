@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SectionCard } from "@/components/site/section-card";
 import { SiteShell } from "@/components/site/site-shell";
 import { ThemeToggle } from "@/components/site/theme-toggle";
-import { coreCompetencies, experience, profile } from "@/lib/resume-data";
+import { coreCompetencies, experience, profile, whyWorkWithMe } from "@/lib/resume-data";
 
 import {
   faXTwitter,
@@ -14,10 +14,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Page() {
+  const displayTitle = profile.title.replace(/^Senior\s+/i, "")
+  const displayRole = experience[0].role.replace(/^Senior\s+/i, "")
+
   return (
     <SiteShell>
       <section className="space-y-6 border-b  border-zinc-200 pb-10 dark:border-zinc-800">
-    
 
         <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
           {profile.name}
@@ -26,11 +28,13 @@ export default function Page() {
         </p>
         </h1>
         <p className="text-base leading-7 text-zinc-600 dark:text-zinc-300">
-          {profile.title}
+          {displayTitle}
         </p>
         <p className="max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200">
           {profile.summary}
         </p>
+
+        <p className="text-base leading-7 text-zinc-600 dark:text-zinc-300">Based in Davao, Philippines • Open to remote roles worldwide • Available for full-time or contract work</p>
 
         <div className="flex flex-wrap items-center justify-between gap-4">
 
@@ -71,12 +75,22 @@ export default function Page() {
             </Link>
           </div>
           <div className="flex flex-wrap pt-1">
-            <button
+
+              <button
               type="button"
               className="inline-flex text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:text-zinc-100 dark:decoration-zinc-700"
             >
-              <Link href="/contact">Hire me</Link>
+              <Link href="Larry_Parba_Resume.pdf" download="Larry_Parba_Resume.pdf">Download Resume</Link>
             </button>
+
+            <button
+              type="button"
+              className="px-4 inline-flex text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:text-zinc-100 dark:decoration-zinc-700"
+            >
+              <Link target="_blank" rel="noreferrer" href="https://calendly.com/larry-parba/30min?">Schedule a 30-min Chat</Link>
+            </button>
+
+         
           </div>
 
         </div>
@@ -95,7 +109,7 @@ export default function Page() {
         <SectionCard title="Recent Role">
           <div className="space-y-3 text-sm text-zinc-700 dark:text-zinc-200">
             <p className="font-medium text-zinc-900 dark:text-zinc-100">
-              {experience[0].role} at {experience[0].company}
+              {displayRole} at {experience[0].company}
             </p>
             <p>
               {experience[0].location} | {experience[0].period}
@@ -109,9 +123,30 @@ export default function Page() {
             </Link>
           </div>
         </SectionCard>
-        <div className="flex text-center">
-          <ThemeToggle />
-        </div>
+
+        <section id="why-me" className="md:col-span-2 mt-4 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+            Why Work With Me?
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {whyWorkWithMe.map((reason) => (
+              <div
+                key={reason}
+                className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm leading-6 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
+              >
+                {reason}
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex rounded-lg bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300"
+            >
+              Let&apos;s discuss your next project
+            </Link>
+          </div>
+        </section>
       </section>
     </SiteShell>
   );

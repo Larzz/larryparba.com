@@ -10,6 +10,7 @@ const navItems = [
 	{ href: '/experience', label: 'Experience' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/skills', label: 'Skills' },
+	// { href: '/notes', label: 'Notes' },
 	// { href: '/contact', label: 'Contact' },
 ]
 
@@ -49,18 +50,23 @@ export function SiteShell ({ children }: SiteShellProps) {
 						})}
 					</nav>
 				</div>
+				
 			</header>
 
 			<main className='py-10'>{children}</main>
 			<footer className='mt-auto border-t border-zinc-200 pt-6 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-300'>
 				<div className='flex flex-wrap items-center justify-between gap-3'>
 					<p>© {currentYear} Larry Parba. All rights reserved.</p>
+				
+						
+		
 					<Link
 						href='mailto:larry.parba@outlook.com'
 						className='underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:decoration-zinc-700'
 					>
 						larry.parba@outlook.com
 					</Link>
+			
 				</div>
 			</footer>
 		</div>

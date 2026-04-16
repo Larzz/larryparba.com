@@ -37,9 +37,15 @@ export function ThemeToggle () {
 			type='button'
 			onClick={handleToggleTheme}
 			className='inline-flex items-center rounded-md border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-zinc-100'
-			aria-label='Toggle light and dark mode'
+			aria-label={
+				isMounted && theme === 'dark'
+					? 'Switch to light mode'
+					: 'Switch to dark mode'
+			}
 		>
-			{isMounted && theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+			<span aria-hidden='true' className='text-base leading-none'>
+				{isMounted && theme === 'dark' ? '☀️' : '🌙'}
+			</span>
 		</button>
 	)
 }

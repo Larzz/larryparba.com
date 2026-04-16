@@ -1,5 +1,6 @@
 import { SiteShell } from '@/components/site/site-shell'
 import { experience } from '@/lib/resume-data'
+import Image from 'next/image'
 
 export default function ExperiencePage () {
 	return (
@@ -20,6 +21,9 @@ export default function ExperiencePage () {
 						key={`${item.company}-${item.period}`}
 						className='rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-6 shadow-sm'
 					>
+						<div className='flex items-center gap-2'>
+							<Image src={`/${item.logo}`} alt={item.company} width={150} height={150} />
+						</div>
 						<div className='flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between'>
 							<h2 className='text-xl font-semibold text-zinc-900 dark:text-zinc-100'>
 								{item.role} - {item.company}
