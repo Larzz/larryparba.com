@@ -9,8 +9,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-	title: 'Larry Parba | Senior Laravel & Vue.js Developer | Available for Hire',
-	description: 'Senior Full-Stack Developer (Laravel, Vue.js, React) with 9+ years building scalable web apps, APIs & AI integrations. Open to remote roles worldwide',
+	title: 'Larry Parba | Mid Laravel & Vue.js Web Developer | Available for Hire',
+	description: 'Mid Full-Stack Web Developer (Laravel, Vue.js, React) with 9+ years building scalable web apps, APIs & AI integrations. Open to remote roles worldwide',
 	icons: {
 		icon: '/favicon.ico',
 	},
@@ -32,7 +32,7 @@ export default function RootLayout({
 
 				<meta property='og:type' content='website' />
 				<meta property='og:url' content='https://larryparba.com/' />
-				<meta property='og:title' content='Larry Parba | Senior Full-Stack Developer' />
+				<meta property='og:title' content='Larry Parba | Mid Full-Stack Web Developer' />
 				<meta
 					property='og:description'
 					content='Building scalable Laravel + Vue.js systems that drive revenue, reduce costs, and scale to 10K+ users. Open to remote opportunities.'
@@ -43,10 +43,10 @@ export default function RootLayout({
 				{/* Twitter */}
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta property='twitter:url' content='https://larryparba.com/' />
-				<meta property='twitter:title' content='Larry Parba | Senior Full-Stack Developer' />
+				<meta property='twitter:title' content='Larry Parba | Mid Full-Stack Web Developer' />
 				<meta
 					property='twitter:description'
-					content='Senior Laravel & Vue.js Developer | API Architecture | AI Integration | Open to remote roles'
+					content='Mid Laravel & Vue.js Web Developer | API Architecture | AI Integration | Open to remote roles'
 				/>
 				<meta property='twitter:image' content='https://larryparba.com/og-image.jpg' />
 

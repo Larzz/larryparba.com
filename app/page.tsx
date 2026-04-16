@@ -14,9 +14,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Page() {
-  const displayTitle = profile.title.replace(/^Senior\s+/i, "")
-  const displayRole = experience[0].role.replace(/^Senior\s+/i, "")
-
   return (
     <SiteShell>
       <section className="space-y-6 border-b  border-zinc-200 pb-10 dark:border-zinc-800">
@@ -28,7 +25,7 @@ export default function Page() {
         </p>
         </h1>
         <p className="text-base leading-7 text-zinc-600 dark:text-zinc-300">
-          {displayTitle}
+          {profile.title}
         </p>
         <p className="max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200">
           {profile.summary}
@@ -109,7 +106,7 @@ export default function Page() {
         <SectionCard title="Recent Role">
           <div className="space-y-3 text-sm text-zinc-700 dark:text-zinc-200">
             <p className="font-medium text-zinc-900 dark:text-zinc-100">
-              {displayRole} at {experience[0].company}
+              {experience[0].role} at {experience[0].company}
             </p>
             <p>
               {experience[0].location} | {experience[0].period}

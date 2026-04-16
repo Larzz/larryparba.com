@@ -19,11 +19,11 @@ export interface ProjectItem {
 export const profile = {
 	name: 'Larry Candelaria Parba',
 	title:
-		'Senior Full-Stack Web Developer | Laravel, Vue.js, React.js | Backend Systems & API Architect',
+		'Mid Full-Stack Web Developer | Laravel, Vue.js, React.js | Backend Systems & API Architect',
 	email: 'larry.parba@outlook.com',
 	github: 'https://github.com/Larzz',
 	summary:
-		'Senior Full-Stack Web Developer with 9+ years of experience building scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects. Specialized in Laravel architecture, RESTful APIs, system optimization, and integrating AI-driven automation into production workflows.',
+		'Mid Full-Stack Web Developer with 9+ years of experience building scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects. Specialized in Laravel architecture, RESTful APIs, system optimization, and integrating AI-driven automation into production workflows.',
 	education:
 		'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
 	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/',
@@ -47,7 +47,7 @@ export const coreCompetencies = [
 export const experience: ExperienceItem[] = [
 	{
 		company: 'Creativo DMCC',
-		role: 'Senior Application Developer',
+		role: 'Mid Application Developer',
 		location: 'Dubai, UAE',
 		period: 'June 2019 - 2026',
 		duration: '7 years',
