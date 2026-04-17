@@ -61,7 +61,7 @@ export default function RootLayout({
 
 			<GoogleAnalytics gaId="G-WKBDP55SD0" />
 			<GoogleTagManager gtmId="G-WKBDP55SD0" />
-			<body className='min-h-full flex flex-col bg-background text-foreground'>
+			<body className='min-h-full flex flex-col text-foreground'>
 				{children}
 			</body>
 		</html>

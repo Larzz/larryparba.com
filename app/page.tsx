@@ -16,6 +16,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Page() {
   return (
     <SiteShell>
+      <div className="flex flex-col items-center justify-center">
+      <ThemeToggle />
+      </div>
       <section className="space-y-6 border-b  border-zinc-200 pb-10 dark:border-zinc-800">
 
         <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
