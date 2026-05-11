@@ -14,6 +14,8 @@ export interface ProjectItem {
 	url: string
 	description: string
 	technologies: string[]
+	logo: string
+	what_i_did?: string
 }
 
 export const profile = {
@@ -49,7 +51,7 @@ export const experience: ExperienceItem[] = [
 		company: 'Creativo DMCC',
 		role: 'Application Developer',
 		location: 'Dubai, UAE',
-		period: 'June 2019 - 2026',
+		period: 'June 2019 - March 2026',
 		duration: '7 years',
 		logo: 'companies/creativo.svg',
 		summary:
@@ -106,6 +108,9 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'E-commerce art platform with CMS-driven content management, payment integration, and transactional order flow.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Stripe'],
+		logo: 'projects/vijitpillai.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
+
 	},
 	{
 		name: 'Adio Luxury',
@@ -113,6 +118,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Luxury brand platform built with Inertia.js architecture featuring dynamic admin-controlled content and form systems.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/adioluxury.ae.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Mowasalat',
@@ -120,6 +127,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Government service registration system with multi-step form workflows, validation pipelines, and backend processing logic.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/mowasalat.ae.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Tip2gether',
@@ -127,6 +136,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Real-time coordination platform for sports teams with event participation workflows and live data handling.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Pusher'],
+		logo: 'projects/tip2get.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'KMK Perfumes',
@@ -134,6 +145,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'E-commerce system with product catalog management, checkout flow, and performance optimization enhancements.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Payment Gateway'],
+		logo: 'projects/kmkperfumes.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Trans Gulf',
@@ -141,6 +154,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Corporate website with CMS-driven service pages and lead generation system for business inquiries.',
 		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/transgulf.ae.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Eurostar Rental',
@@ -148,6 +163,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Vehicle booking system with reservation workflows and backend fleet management logic.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/eurostarrental.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Mercato Shopping Mall',
@@ -155,6 +172,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'High-traffic retail platform optimized for events, promotions, and performance under heavy user load.',
 		technologies: ['WordPress', 'PHP', 'jQuery', 'MySQL', 'Google Analytics'],
+		logo: 'projects/mercatoshoppingmall.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Soporella',
@@ -162,6 +181,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'Brand website with custom UI components and CMS-driven content architecture.',
 		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/soporella.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 	{
 		name: 'Shop Mesco',
@@ -169,6 +190,8 @@ export const featuredProjects: ProjectItem[] = [
 		description:
 			'E-commerce store with catalog management, checkout flow, and backend integrations.',
 		technologies: ['Shopify', 'Liquid', 'JavaScript', 'Payment Gateway'],
+		logo: 'projects/shopmesco.com.png',
+		what_i_did: 'I was responsible for the full-stack development of the website, including the backend and frontend.',
 	},
 ]
 

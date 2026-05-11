@@ -31,6 +31,9 @@ export default function ProjectsPage () {
 								<li key={technology}>- {technology}</li>
 							))}
 						</ul>
+						{project.what_i_did && (
+							<p className='mt-4 text-sm leading-6 text-zinc-700 dark:text-zinc-200'>{project.what_i_did}</p>
+						)}
 						<Link
 							href={project.url}
 							target='_blank'

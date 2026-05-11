@@ -53,7 +53,7 @@ export default function RootLayout({
 				{/* Favicon & Theme */}
 				<link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32' />
 				<link rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16' />
-				<meta name='theme-color' content='#1a1a1a' />
+				<meta name='theme-color' content='#2563eb' />
 
 				{/* Canonical */}
 				<link rel='canonical' href='https://larryparba.com/' />
@@ -61,7 +61,7 @@ export default function RootLayout({
 
 			<GoogleAnalytics gaId="G-WKBDP55SD0" />
 			<GoogleTagManager gtmId="G-WKBDP55SD0" />
-			<body className='min-h-full flex flex-col text-foreground'>
+			<body className='flex min-h-full flex-col font-sans text-foreground'>
 				{children}
 			</body>
 		</html>
