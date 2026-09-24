@@ -1,212 +1,95 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
+import './home.css'
+import { profile } from '@/lib/resume-data'
 
-import { SectionCard } from '@/components/site/section-card'
-import { SiteShell } from '@/components/site/site-shell'
-import { TechStackStrip } from '@/components/site/tech-stack-strip'
-import {
-	coreCompetencies,
-	experience,
-	profile,
-	whyWorkWithMe,
-} from '@/lib/resume-data'
+const Icon = ({ name, className = '' }: { name: string; className?: string }) => (
+  <span aria-hidden='true' className={`material-symbols-outlined ${className}`}>{name}</span>
+)
 
-import {
-	faGithub,
-	faLinkedin,
-	faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const stats = [
-	{ value: '9+', label: 'Years Experience' },
-	{ value: '50+', label: 'Projects Completed' },
-	{ value: '30+', label: 'Happy Clients' },
-	{ value: '100%', label: 'Job Success' },
+const services = [
+  {
+    tag: 'WEB ARCHITECTURE', icon: 'web', tone: 'sky', title: 'Modern High-Performance Web',
+    description: 'Lightning-fast, SEO-optimized web platforms built with robust server-side execution and modern component design systems.',
+    points: ['Scalable Laravel, React & Next.js applications', 'Headless CMS integrations & static pipelines', 'Performance-focused interfaces and APIs'],
+    stack: ['TypeScript', 'Next.js', 'Laravel', 'PostgreSQL'],
+  },
+  {
+    tag: 'CROSS-PLATFORM', icon: 'devices', tone: 'cyan', title: 'Mobile & Web Applications',
+    description: 'End-to-end engineered applications with smooth reactive interfaces and resilient backends.',
+    points: ['Responsive web and mobile experiences', 'Real-time integrations & REST APIs', 'Stripe checkout & subscription workflows'],
+    stack: ['React', 'Vue.js', 'Node.js', 'Supabase'],
+  },
+  {
+    tag: 'INFRASTRUCTURE', icon: 'dns', tone: 'indigo', title: 'Server Architecture & DevOps',
+    description: 'Reliable Linux VPS deployments, containerized services, SSL/TLS configuration, and backup planning.',
+    points: ['Linux VPS configuration & maintenance', 'Docker-based deployment workflows', 'Nginx, DNS & cloud infrastructure'],
+    stack: ['Docker', 'Nginx', 'AWS', 'CI/CD'],
+  },
+  {
+    tag: 'DELIVERABILITY', icon: 'mark_email_read', tone: 'emerald', title: 'Business Email & Deliverability',
+    description: 'Improve inbox placement with sound DNS authentication, migrations, and mail server hygiene.',
+    points: ['SPF, DKIM & DMARC configuration', 'Google Workspace / Microsoft 365 migration', 'Email diagnostics & ongoing monitoring'],
+    stack: ['DMARC', 'DKIM', 'Microsoft 365', 'Google Workspace'],
+  },
 ]
 
-export default function Page () {
-	return (
-		<SiteShell>
-			<section className='space-y-8 pb-12'>
-				<p className='text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400'>
-					Full stack developer
-				</p>
-				<h1 className='max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl lg:text-[2.75rem] lg:leading-[1.15]'>
-					I build fast, reliable and scalable{' '}
-					<span className='text-blue-600 dark:text-blue-400'>
-						web solutions.
-					</span>
-				</h1>
-				<p className='max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300'>
-					9+ years of experience building modern web applications for
-					startups, enterprise teams, and growing businesses.
-				</p>
-				<div className='flex flex-wrap gap-3'>
-					<Link
-						href={`mailto:${profile.email}?subject=Project%20inquiry`}
-						className='inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 dark:hover:bg-blue-500'
-					>
-						Hire Me
-					</Link>
-					<Link
-						href='/projects'
-						className='inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-blue-600 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-900 dark:text-blue-400 dark:hover:bg-gray-800'
-					>
-						View Projects
-					</Link>
-				</div>
-				<div className='pt-4'>
-					<TechStackStrip />
-				</div>
-			</section>
+const pipeline = [
+  { icon: 'webhook', title: 'Inbound Webhook', description: 'Form submission captured and validated before entering the workflow.', footer: '01 / intake' },
+  { icon: 'smart_toy', title: 'AI Lead Scoring', description: 'Prospect context analyzed and routed by technical fit.', footer: '02 / enrichment' },
+  { icon: 'forward_to_inbox', title: 'Smart Auto-Response', description: 'A tailored reply and next steps are prepared for the lead.', footer: '03 / response' },
+  { icon: 'sync_alt', title: 'CRM & Team Alert', description: 'The opportunity is logged and the right team member is notified.', footer: '04 / handoff' },
+]
 
-			<section
-				className='-mx-5 border-y border-gray-200 bg-gray-100 px-5 py-10 dark:border-gray-800 dark:bg-gray-900/50 sm:-mx-8 sm:px-8'
-				aria-label='Highlights'
-			>
-				<div className='mx-auto grid max-w-6xl grid-cols-2 gap-8 md:grid-cols-4 md:gap-4'>
-					{stats.map((row) => (
-						<div
-							key={row.label}
-							className='text-center md:text-left'
-						>
-							<p className='text-3xl font-bold text-blue-600 dark:text-blue-400 sm:text-4xl'>
-								{row.value}
-							</p>
-							<p className='mt-1 text-sm text-gray-600 dark:text-gray-400'>
-								{row.label}
-							</p>
-						</div>
-					))}
-				</div>
-			</section>
+const focusAreas = ['Web / Full-Stack', 'Mobile Apps', 'Email Deliverability', 'DevOps & Cloud VPS', 'Custom AI Automations & Agents']
 
-			<section className='space-y-6 border-b border-gray-200 pb-10 pt-12 dark:border-gray-800'>
-				<h2 className='text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100'>
-					{profile.name}
-				</h2>
-				<p className='text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400'>
-					{profile.title}
-				</p>
-				<p className='max-w-3xl text-base leading-7 text-gray-700 dark:text-gray-200'>
-					{profile.summary}
-				</p>
-				<p className='text-base leading-7 text-gray-600 dark:text-gray-300'>
-					Based in Davao, Philippines • Open to remote roles worldwide •
-					Available for full-time or contract work
-				</p>
-				<div className='flex flex-wrap items-center justify-between gap-4'>
-					<div className='flex flex-wrap items-center gap-5 text-sm'>
-						<Link
-							href={profile.github}
-							target='_blank'
-							rel='noreferrer'
-							aria-label='GitHub'
-							className='inline-flex text-gray-800 transition-opacity hover:opacity-80 dark:text-gray-100'
-						>
-							<FontAwesomeIcon icon={faGithub} className='h-7 w-7' />
-						</Link>
-						<Link
-							href={`mailto:${profile.email}`}
-							aria-label='Email'
-							className='inline-flex text-blue-600 transition-opacity hover:opacity-80 dark:text-blue-400'
-						>
-							<FontAwesomeIcon icon={faEnvelope} className='h-7 w-7' />
-						</Link>
-						<Link
-							href={profile.linkedin}
-							target='_blank'
-							rel='noreferrer'
-							aria-label='LinkedIn'
-							className='inline-flex text-[#0a66c2] transition-opacity hover:opacity-80'
-						>
-							<FontAwesomeIcon icon={faLinkedin} className='h-7 w-7' />
-						</Link>
-						<Link
-							href={profile.twitter}
-							target='_blank'
-							rel='noreferrer'
-							aria-label='X'
-							className='inline-flex text-gray-900 transition-opacity hover:opacity-80 dark:text-gray-100'
-						>
-							<FontAwesomeIcon icon={faXTwitter} className='h-7 w-7' />
-						</Link>
-					</div>
-					<div className='flex flex-wrap gap-4 pt-1'>
-						<Link
-							href='Larry_Parba_Resume.pdf'
-							download='Larry_Parba_Resume.pdf'
-							className='text-sm font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-blue-600 dark:text-gray-100 dark:decoration-gray-600 dark:hover:text-blue-400'
-						>
-							Download Resume
-						</Link>
-						<Link
-							target='_blank'
-							rel='noreferrer'
-							href='https://calendly.com/larry-parba/30min?'
-							className='text-sm font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-blue-600 dark:text-gray-100 dark:decoration-gray-600 dark:hover:text-blue-400'
-						>
-							Schedule a 30-min Chat
-						</Link>
-					</div>
-				</div>
-			</section>
+function ServiceCard({ service }: { service: typeof services[number] }) {
+  return <article className='portfolio-card service-card'>
+    <div>
+      <div className='service-top'><span className={`service-tag ${service.tone}`}>{service.tag}</span><Icon name={service.icon} className={`service-icon ${service.tone}`} /></div>
+      <h3>{service.title}</h3>
+      <p className='service-description'>{service.description}</p>
+      <ul className='service-points'>{service.points.map(point => <li key={point}><Icon name='check_circle' />{point}</li>)}</ul>
+    </div>
+    <div className='stack-list'>{service.stack.map(item => <span key={item}>{item}</span>)}</div>
+  </article>
+}
 
-			<section className='mt-10 grid gap-6 md:grid-cols-2'>
-				<SectionCard title='Core Competencies'>
-					<ul className='space-y-2 text-sm leading-6 text-gray-700 dark:text-gray-200'>
-						{coreCompetencies.slice(0, 5).map((competency) => (
-							<li key={competency}>- {competency}</li>
-						))}
-					</ul>
-				</SectionCard>
+export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => setMenuOpen(false)
+  return <div className='portfolio-page'>
+    <header className='portfolio-header'>
+      <div className='portfolio-container header-inner'>
+        <div className='brand-group'>
+          <a href='#overview' className='brand' onClick={closeMenu}><span className='brand-mark'><Icon name='terminal' /></span><span>Larry Parba</span></a>
+          <span className='availability'><span className='status-dot' />Available for projects</span>
+        </div>
+        <nav className='desktop-nav' aria-label='Main navigation'><a href='#services'>Services</a><a href='#pipeline'>AI Pipeline</a><a href='#results'>Case Study</a><a href='#booking'>Consultation</a></nav>
+        <div className='header-actions'><a className='button button-primary header-book' href='#booking'><Icon name='event_available' />Book Call</a><button className='menu-button' aria-label='Open navigation menu' aria-expanded={menuOpen} onClick={() => setMenuOpen(true)}><Icon name='menu' /></button></div>
+      </div>
+    </header>
 
-				<SectionCard title='Recent Role'>
-					<div className='space-y-3 text-sm text-gray-700 dark:text-gray-200'>
-						<p className='font-medium text-gray-900 dark:text-gray-100'>
-							{experience[0].role} at {experience[0].company}
-						</p>
-						<p>
-							{experience[0].location} | {experience[0].period}
-						</p>
-						<p className='leading-6'>{experience[0].summary}</p>
-						<Link
-							href='/experience'
-							className='inline-flex text-sm font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-blue-600 dark:text-gray-100 dark:decoration-gray-600 dark:hover:text-blue-400'
-						>
-							View full experience
-						</Link>
-					</div>
-				</SectionCard>
+    {menuOpen && <div className='drawer-backdrop' onClick={closeMenu}><aside className='mobile-drawer' onClick={event => event.stopPropagation()} aria-label='Mobile navigation'><div className='drawer-heading'><span className='brand'><span className='brand-mark'><Icon name='terminal' /></span>Larry Parba</span><button aria-label='Close navigation menu' onClick={closeMenu}><Icon name='close' /></button></div><nav>{[['Services','#services'],['AI Pipeline','#pipeline'],['Case Study','#results'],['Consultation','#booking']].map(([label,href]) => <a href={href} key={href} onClick={closeMenu}>{label}</a>)}</nav><a className='button button-primary' href='#booking' onClick={closeMenu}>Schedule Discovery <Icon name='arrow_forward' /></a></aside></div>}
 
-				<section
-					id='why-me'
-					className='mt-4 rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900/70 md:col-span-2'
-				>
-					<h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100'>
-						Why Work With Me?
-					</h2>
-					<div className='mt-6 grid gap-4 md:grid-cols-2'>
-						{whyWorkWithMe.map((reason) => (
-							<div
-								key={reason}
-								className='rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm leading-6 text-gray-700 dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-200'
-							>
-								{reason}
-							</div>
-						))}
-					</div>
-					<div className='mt-8 text-center'>
-						<Link
-							href='/contact'
-							className='inline-flex rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 dark:hover:bg-blue-500'
-						>
-							Let&apos;s discuss your next project
-						</Link>
-					</div>
-				</section>
-			</section>
-		</SiteShell>
-	)
+    <main>
+      <section id='overview' className='hero-section'><div className='portfolio-container'>
+        <div className='hero-copy'><span className='eyebrow-pill'><span className='status-dot blue' />Full-Stack Engineer & Systems Consultant</span><h1>Engineering scalable apps, cloud servers & <span>intelligent AI automations.</span></h1><p>From robust web & mobile applications to rock-solid server infrastructure, high-deliverability email systems, and autonomous AI workflows built for high-growth ventures.</p><div className='hero-actions'><a className='button button-primary' href='#booking'>Schedule Free Discovery Call <Icon name='arrow_forward' /></a><a className='button button-secondary' href='#services'><Icon name='explore' />Explore Services</a></div></div>
+        <div className='metrics'><div className='portfolio-card metric'><span className='metric-icon sky'><Icon name='cloud_done' /></span><strong>9+</strong><span>YEARS BUILDING SYSTEMS</span></div><div className='portfolio-card metric'><span className='metric-icon emerald'><Icon name='rocket_launch' /></span><strong>10+</strong><span>SELECTED PROJECTS</span></div><div className='portfolio-card metric'><span className='metric-icon indigo'><Icon name='insights' /></span><strong>AI</strong><span>WORKFLOW AUTOMATION</span></div></div>
+      </div></section>
+
+      <section id='services' className='services-section section-pad'><div className='portfolio-container'><div className='section-heading split'><div><span className='section-kicker'>Expertise & Execution</span><h2>Core Technical Services</h2></div><p>Production-grade systems engineered with modern frameworks, high security standards, and maintainable foundations.</p></div><div className='services-grid'>{services.map(service => <ServiceCard key={service.tag} service={service} />)}<article className='portfolio-card service-card ai-card'><div><div className='service-top'><span className='service-tag sky'>AUTONOMOUS SYSTEMS & AI</span><Icon name='psychology' className='service-icon sky' /></div><h3>Custom AI Automation & Agent Workflows</h3><p className='service-description'>Internal pipelines, intelligent parsing agents, automated CRM updates, and custom AI orchestration that reduce repetitive work.</p><div className='ai-features'><div><strong>Autonomous Agents</strong><span>Tool execution, multi-step workflows & structured extraction.</span></div><div><strong>Self-Hosted n8n</strong><span>Private automation infrastructure with direct control.</span></div><div><strong>Lead Orchestration</strong><span>Lead enrichment, scoring & CRM pipeline sync.</span></div></div></div><div className='stack-list ai-stack'><div>{['n8n','LangChain','Python','OpenAI API','Anthropic'].map(item => <span key={item}>{item}</span>)}</div><small>Enterprise Security Ready</small></div></article></div></div></section>
+
+      <section id='pipeline' className='pipeline-section section-pad'><div className='portfolio-container narrow'><div className='section-heading centered'><span className='section-kicker'>Interactive Architecture</span><h2>AI Pipeline Execution Flow</h2><p>See how an inbound lead can be ingested, enriched, and routed without manual handoffs.</p></div><div className='portfolio-card pipeline-panel'><div className='pipeline-toolbar'><div className='traffic-lights'><i/><i/><i/><span>lead-pipeline.workflow</span></div><span className='active-pill'><span className='status-dot' />WORKFLOW EXAMPLE</span></div><div className='pipeline-body'><div className='pipeline-grid'>{pipeline.map((step,index) => <div className='pipeline-step' key={step.title}><div className='pipeline-step-top'><b>{String(index + 1).padStart(2,'0')}</b><Icon name={step.icon} /></div><h3>{step.title}</h3><p>{step.description}</p><small>{step.footer}</small></div>)}</div><div className='pipeline-status'><span>INTAKE → ENRICHMENT → RESPONSE → HANDOFF</span><span className='success-label'><Icon name='check' /> HUMAN REVIEW WHEN NEEDED</span></div></div></div></div></section>
+
+      <section id='results' className='results-section section-pad'><div className='portfolio-container quote-wrap'><div className='portfolio-card quote-card'><div className='quote-top'><span className='result-pill'><Icon name='verified' />PRODUCTION EXPERIENCE</span><span className='result-context'>WEB / API / INFRASTRUCTURE</span></div><blockquote>“I build scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects.”</blockquote><div className='quote-footer'><span className='avatar'>LP</span><span><strong>Larry Parba</strong><small>Full-Stack Engineer & Systems Consultant</small></span><Link href='/projects'>View selected projects <Icon name='arrow_forward' /></Link></div></div></div></section>
+
+      <section id='booking' className='booking-section section-pad'><div className='portfolio-container booking-grid'><div className='booking-copy'><span className='section-kicker'>Direct Access</span><h2>Ready to elevate your systems or launch your next product?</h2><p>Select your priority focus areas and let&apos;s structure an actionable rollout roadmap tailored to your stack and timeline.</p><div className='booking-benefits'><div><Icon name='schedule' /><span><strong>Direct Response</strong><small>Discuss your project with the engineer doing the work.</small></span></div><div><Icon name='lock' /><span><strong>Confidentiality Assured</strong><small>Private project discussions from the first message.</small></span></div><div><Icon name='handshake' /><span><strong>Flexible Engagement</strong><small>Project-based or ongoing technical support.</small></span></div></div><div className='email-card'><small>DIRECT EMAIL INQUIRIES</small><a href={`mailto:${profile.email}`}>{profile.email}</a></div></div><form className='portfolio-card consultation-form' action='https://formspree.io/f/maqaeekl' method='POST'><fieldset><legend>Select Focus Areas:</legend><div className='focus-options'>{focusAreas.map((area,index) => <label key={area}><input type='checkbox' name='focusAreas' value={area} defaultChecked={[0,2,4].includes(index)} /><span>{area}</span></label>)}</div></fieldset><div className='form-row'><label>YOUR NAME<input required name='name' type='text' placeholder='e.g. Alex Henderson' /></label><label>WORK EMAIL<input required name='email' type='email' placeholder='alex@company.com' /></label></div><label>PROJECT BRIEF / CHALLENGE<textarea name='message' required rows={3} placeholder="Briefly describe what you're building, server bottlenecks, or automation goals..." /></label><button className='button button-primary' type='submit'>Request a Consultation <Icon name='send' /></button><p>Direct engineer access · Confidential conversation</p></form></div></section>
+    </main>
+
+    <footer className='portfolio-footer'><div className='portfolio-container'><div className='footer-main'><div><a href='#overview' className='footer-brand'><Icon name='terminal' />Larry Parba</a><p>Full-stack digital engineering & infrastructure consultancy.</p></div><nav aria-label='Footer navigation'><Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/notes'>Notes</Link><Link href='/contact'>Contact</Link></nav><div className='footer-socials'><a href={profile.github} target='_blank' rel='noreferrer' aria-label='GitHub'><Icon name='terminal' /></a><a href={profile.linkedin} target='_blank' rel='noreferrer' aria-label='LinkedIn'><Icon name='work' /></a><a href={`mailto:${profile.email}`} aria-label='Email'><Icon name='mail' /></a></div></div><div className='footer-bottom'><span>© {new Date().getFullYear()} Larry Parba (larryparba.com). All rights reserved.</span><span><span className='status-dot' /> Available for new projects</span></div></div></footer>
+    <nav className='mobile-bottom-nav' aria-label='Quick navigation'><a href='#overview'><Icon name='home' />Overview</a><a href='#services'><Icon name='dns' />Services</a><a href='#pipeline'><Icon name='psychology' />AI Flow</a><a href='#booking'><Icon name='event_available' />Book</a></nav>
+  </div>
 }

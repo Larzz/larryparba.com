@@ -1,16 +1,30 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
-const inter = Inter({
-	variable: '--font-inter',
-	subsets: ['latin'],
+const geist = localFont({ src: '../public/fonts/geist.woff', variable: '--font-geist', display: 'swap' })
+const spaceGrotesk = localFont({
+	src: [
+		{ path: '../public/fonts/space-grotesk-500.ttf', weight: '500' },
+		{ path: '../public/fonts/space-grotesk-600.ttf', weight: '600' },
+		{ path: '../public/fonts/space-grotesk-700.ttf', weight: '700' },
+	],
+	variable: '--font-space-grotesk',
+	display: 'swap',
+})
+const jetBrainsMono = localFont({
+	src: [
+		{ path: '../public/fonts/jetbrains-mono-400.ttf', weight: '400' },
+		{ path: '../public/fonts/jetbrains-mono-600.ttf', weight: '600' },
+	],
+	variable: '--font-jetbrains-mono',
+	display: 'swap',
 })
 
 export const metadata: Metadata = {
-	title: 'Larry Parba | Laravel & Vue.js Web Developer | Available for Hire',
-	description: 'Full-Stack Web Developer (Laravel, Vue.js, React) with 9+ years building scalable web apps, APIs & AI integrations. Open to remote roles worldwide',
+	title: 'Larry Parba — Full-Stack Engineer & Systems Consultant',
+	description: 'Scalable web applications, production infrastructure, email systems, and AI automation by Larry Parba.',
 	icons: {
 		icon: '/favicon.ico',
 	},
@@ -22,7 +36,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en' className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+		<html lang='en' className={`${geist.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} h-full antialiased`} suppressHydrationWarning>
 			<head>
 				<script
 					dangerouslySetInnerHTML={{
