@@ -1,17 +1,20 @@
 'use client'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faCalendarCheck, faTerminal, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ReactNode } from 'react'
-import { ThemeToggle } from './theme-toggle'
+import { ReactNode, useState } from 'react'
+
+import { profile } from '@/lib/resume-data'
+import styles from './site-shell.module.css'
 
 const navItems = [
-	{ href: '/', label: 'Home' },
-	{ href: '/about', label: 'About' },
-	{ href: '/skills', label: 'Services' },
+	{ href: '/#services', label: 'Services' },
+	{ href: '/#pipeline', label: 'AI Pipeline' },
 	{ href: '/projects', label: 'Projects' },
-	{ href: '/experience', label: 'Experience' },
-	{ href: '/contact', label: 'Contact' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/#booking', label: 'Consultation' },
 ]
 
 interface SiteShellProps {
@@ -20,66 +23,85 @@ interface SiteShellProps {
 
 export function SiteShell ({ children }: SiteShellProps) {
 	const pathname = usePathname()
-	const currentYear = new Date().getFullYear()
+	const [menuOpen, setMenuOpen] = useState(false)
+	const isActive = (href: string) => !href.includes('#') && pathname.startsWith(href)
 
 	return (
-		<div className='mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 py-6 sm:px-8 sm:py-8'>
-			<header className='border-b border-gray-200 pb-5 dark:border-gray-800'>
-				<div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
-					<Link
-						href='/'
-						className='shrink-0 text-lg font-bold tracking-tight text-blue-900 dark:text-blue-100'
-					>
-						LARRY PARBA
-					</Link>
-					<div className='flex flex-1 flex-wrap items-center justify-end gap-3 sm:gap-4'>
-						<nav
-							aria-label='Main navigation'
-							className='flex flex-1 flex-wrap items-center gap-x-1 gap-y-2 sm:justify-center md:gap-x-6'
-						>
-							{navItems.map((item) => {
-								const isActive = pathname === item.href
-								return (
-									<Link
-										key={item.href}
-										href={item.href}
-										className={[
-											'rounded-md px-2 py-1.5 text-sm font-medium transition-colors',
-											isActive
-												? 'text-blue-600 dark:text-blue-400'
-												: 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100',
-										].join(' ')}
-										aria-current={isActive ? 'page' : undefined}
-									>
-										{item.label}
-									</Link>
-								)
-							})}
-						</nav>
-						<div className='flex shrink-0 items-center gap-2'>
-							<ThemeToggle />
-							<Link
-								href='/contact'
-								className='inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500'
-							>
-								Let&apos;s Talk
+		<div className={styles.shell}>
+			<header className={styles.header}>
+				<div className={styles.container}>
+					<div className={styles.headerInner}>
+						<div className={styles.brandGroup}>
+							<Link href='/' className={styles.brand} aria-label='Larry Parba home'>
+								<span className={styles.brandMark}><FontAwesomeIcon icon={faTerminal} /></span>
+								<span>Larry Parba</span>
 							</Link>
+							<span className={styles.availability}><span className={styles.statusDot} />Available for projects</span>
+						</div>
+
+						<nav className={styles.desktopNav} aria-label='Main navigation'>
+							{navItems.map((item) => (
+								<Link
+									key={item.href}
+									href={item.href}
+									className={isActive(item.href) ? styles.activeNav : undefined}
+									aria-current={isActive(item.href) ? 'page' : undefined}
+								>
+									{item.label}
+								</Link>
+							))}
+						</nav>
+
+						<div className={styles.headerActions}>
+							<Link href='/#booking' className={styles.primaryButton}>
+								<FontAwesomeIcon icon={faCalendarCheck} /> Book Call
+							</Link>
+							<button
+								type='button'
+								className={styles.menuButton}
+								onClick={() => setMenuOpen(true)}
+								aria-label='Open navigation menu'
+								aria-expanded={menuOpen}
+							>
+								<FontAwesomeIcon icon={faBars} />
+							</button>
 						</div>
 					</div>
 				</div>
 			</header>
 
-			<main className='flex-1 py-10'>{children}</main>
+			{menuOpen ? (
+				<div className={styles.drawerBackdrop} onClick={() => setMenuOpen(false)}>
+					<aside className={styles.drawer} onClick={(event) => event.stopPropagation()} aria-label='Mobile navigation'>
+						<div className={styles.drawerHeading}>
+							<span className={styles.brand}><span className={styles.brandMark}><FontAwesomeIcon icon={faTerminal} /></span>Larry Parba</span>
+							<button type='button' onClick={() => setMenuOpen(false)} aria-label='Close navigation menu'><FontAwesomeIcon icon={faXmark} /></button>
+						</div>
+						<nav>
+							{navItems.map((item) => <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className={isActive(item.href) ? styles.drawerActive : undefined}>{item.label}</Link>)}
+						</nav>
+						<Link href='/#booking' className={styles.primaryButton} onClick={() => setMenuOpen(false)}><FontAwesomeIcon icon={faCalendarCheck} /> Schedule Discovery</Link>
+					</aside>
+				</div>
+			) : null}
 
-			<footer className='mt-auto border-t border-gray-200 pt-6 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-400'>
-				<div className='flex flex-wrap items-center justify-between gap-3'>
-					<p>© {currentYear} Larry Parba. All rights reserved.</p>
-					<Link
-						href='mailto:larry.parba@outlook.com'
-						className='text-gray-700 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-blue-600 dark:text-gray-300 dark:decoration-gray-600 dark:hover:text-blue-400'
-					>
-						larry.parba@outlook.com
-					</Link>
+			<main className={styles.main}>{children}</main>
+
+			<footer className={styles.footer}>
+				<div className={styles.container}>
+					<div className={styles.footerMain}>
+						<div>
+							<Link href='/' className={styles.footerBrand}><FontAwesomeIcon icon={faTerminal} /> Larry Parba</Link>
+							<p>Full-stack digital engineering &amp; infrastructure consultancy.</p>
+						</div>
+						<nav aria-label='Footer navigation'>
+							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/contact'>Contact</Link>
+						</nav>
+					</div>
+					<div className={styles.footerBottom}>
+						<span>© {new Date().getFullYear()} Larry Parba. All rights reserved.</span>
+						<a href={`mailto:${profile.email}`}>{profile.email}</a>
+					</div>
 				</div>
 			</footer>
 		</div>

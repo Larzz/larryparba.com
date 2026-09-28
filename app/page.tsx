@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import './home.css'
+import { SiteShell } from '@/components/site/site-shell'
 import { profile } from '@/lib/resume-data'
 
 const Icon = ({ name, className = '' }: { name: string; className?: string }) => (
@@ -58,23 +58,8 @@ function ServiceCard({ service }: { service: typeof services[number] }) {
 }
 
 export default function Page() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const closeMenu = () => setMenuOpen(false)
-  return <div className='portfolio-page'>
-    <header className='portfolio-header'>
-      <div className='portfolio-container header-inner'>
-        <div className='brand-group'>
-          <a href='#overview' className='brand' onClick={closeMenu}><span className='brand-mark'><Icon name='terminal' /></span><span>Larry Parba</span></a>
-          <span className='availability'><span className='status-dot' />Available for projects</span>
-        </div>
-        <nav className='desktop-nav' aria-label='Main navigation'><a href='#services'>Services</a><a href='#pipeline'>AI Pipeline</a><a href='#results'>Case Study</a><a href='#booking'>Consultation</a></nav>
-        <div className='header-actions'><a className='button button-primary header-book' href='#booking'><Icon name='event_available' />Book Call</a><button className='menu-button' aria-label='Open navigation menu' aria-expanded={menuOpen} onClick={() => setMenuOpen(true)}><Icon name='menu' /></button></div>
-      </div>
-    </header>
-
-    {menuOpen && <div className='drawer-backdrop' onClick={closeMenu}><aside className='mobile-drawer' onClick={event => event.stopPropagation()} aria-label='Mobile navigation'><div className='drawer-heading'><span className='brand'><span className='brand-mark'><Icon name='terminal' /></span>Larry Parba</span><button aria-label='Close navigation menu' onClick={closeMenu}><Icon name='close' /></button></div><nav>{[['Services','#services'],['AI Pipeline','#pipeline'],['Case Study','#results'],['Consultation','#booking']].map(([label,href]) => <a href={href} key={href} onClick={closeMenu}>{label}</a>)}</nav><a className='button button-primary' href='#booking' onClick={closeMenu}>Schedule Discovery <Icon name='arrow_forward' /></a></aside></div>}
-
-    <main>
+  return <SiteShell><div className='portfolio-page'>
+    <div>
       <section id='overview' className='hero-section'><div className='portfolio-container'>
         <div className='hero-copy'><span className='eyebrow-pill'><span className='status-dot blue' />Full-Stack Engineer & Systems Consultant</span><h1>Engineering scalable apps, cloud servers & <span>intelligent AI automations.</span></h1><p>From robust web & mobile applications to rock-solid server infrastructure, high-deliverability email systems, and autonomous AI workflows built for high-growth ventures.</p><div className='hero-actions'><a className='button button-primary' href='#booking'>Schedule Free Discovery Call <Icon name='arrow_forward' /></a><a className='button button-secondary' href='#services'><Icon name='explore' />Explore Services</a></div></div>
         <div className='metrics'><div className='portfolio-card metric'><span className='metric-icon sky'><Icon name='cloud_done' /></span><strong>9+</strong><span>YEARS BUILDING SYSTEMS</span></div><div className='portfolio-card metric'><span className='metric-icon emerald'><Icon name='rocket_launch' /></span><strong>10+</strong><span>SELECTED PROJECTS</span></div><div className='portfolio-card metric'><span className='metric-icon indigo'><Icon name='insights' /></span><strong>AI</strong><span>WORKFLOW AUTOMATION</span></div></div>
@@ -87,9 +72,7 @@ export default function Page() {
       <section id='results' className='results-section section-pad'><div className='portfolio-container quote-wrap'><div className='portfolio-card quote-card'><div className='quote-top'><span className='result-pill'><Icon name='verified' />PRODUCTION EXPERIENCE</span><span className='result-context'>WEB / API / INFRASTRUCTURE</span></div><blockquote>“I build scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects.”</blockquote><div className='quote-footer'><span className='avatar'>LP</span><span><strong>Larry Parba</strong><small>Full-Stack Engineer & Systems Consultant</small></span><Link href='/projects'>View selected projects <Icon name='arrow_forward' /></Link></div></div></div></section>
 
       <section id='booking' className='booking-section section-pad'><div className='portfolio-container booking-grid'><div className='booking-copy'><span className='section-kicker'>Direct Access</span><h2>Ready to elevate your systems or launch your next product?</h2><p>Select your priority focus areas and let&apos;s structure an actionable rollout roadmap tailored to your stack and timeline.</p><div className='booking-benefits'><div><Icon name='schedule' /><span><strong>Direct Response</strong><small>Discuss your project with the engineer doing the work.</small></span></div><div><Icon name='lock' /><span><strong>Confidentiality Assured</strong><small>Private project discussions from the first message.</small></span></div><div><Icon name='handshake' /><span><strong>Flexible Engagement</strong><small>Project-based or ongoing technical support.</small></span></div></div><div className='email-card'><small>DIRECT EMAIL INQUIRIES</small><a href={`mailto:${profile.email}`}>{profile.email}</a></div></div><form className='portfolio-card consultation-form' action='https://formspree.io/f/maqaeekl' method='POST'><fieldset><legend>Select Focus Areas:</legend><div className='focus-options'>{focusAreas.map((area,index) => <label key={area}><input type='checkbox' name='focusAreas' value={area} defaultChecked={[0,2,4].includes(index)} /><span>{area}</span></label>)}</div></fieldset><div className='form-row'><label>YOUR NAME<input required name='name' type='text' placeholder='e.g. Alex Henderson' /></label><label>WORK EMAIL<input required name='email' type='email' placeholder='alex@company.com' /></label></div><label>PROJECT BRIEF / CHALLENGE<textarea name='message' required rows={3} placeholder="Briefly describe what you're building, server bottlenecks, or automation goals..." /></label><button className='button button-primary' type='submit'>Request a Consultation <Icon name='send' /></button><p>Direct engineer access · Confidential conversation</p></form></div></section>
-    </main>
-
-    <footer className='portfolio-footer'><div className='portfolio-container'><div className='footer-main'><div><a href='#overview' className='footer-brand'><Icon name='terminal' />Larry Parba</a><p>Full-stack digital engineering & infrastructure consultancy.</p></div><nav aria-label='Footer navigation'><Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/notes'>Notes</Link><Link href='/contact'>Contact</Link></nav><div className='footer-socials'><a href={profile.github} target='_blank' rel='noreferrer' aria-label='GitHub'><Icon name='terminal' /></a><a href={profile.linkedin} target='_blank' rel='noreferrer' aria-label='LinkedIn'><Icon name='work' /></a><a href={`mailto:${profile.email}`} aria-label='Email'><Icon name='mail' /></a></div></div><div className='footer-bottom'><span>© {new Date().getFullYear()} Larry Parba (larryparba.com). All rights reserved.</span><span><span className='status-dot' /> Available for new projects</span></div></div></footer>
-    <nav className='mobile-bottom-nav' aria-label='Quick navigation'><a href='#overview'><Icon name='home' />Overview</a><a href='#services'><Icon name='dns' />Services</a><a href='#pipeline'><Icon name='psychology' />AI Flow</a><a href='#booking'><Icon name='event_available' />Book</a></nav>
+    </div>
   </div>
+  </SiteShell>
 }

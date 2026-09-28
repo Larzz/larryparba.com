@@ -1,45 +1,37 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
 import { SiteShell } from '@/components/site/site-shell'
 import { experience } from '@/lib/resume-data'
-import Image from 'next/image'
+import styles from '../pages.module.css'
+
+export const metadata: Metadata = {
+	title: 'Experience | Larry Parba',
+	description: 'Larry Parba’s professional experience across full-stack delivery, architecture, and production infrastructure.',
+}
 
 export default function ExperiencePage () {
 	return (
 		<SiteShell>
-			<section>
-				<h1 className='text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100'>
-					Experience
-				</h1>
-				<p className='mt-3 max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200'>
-					Professional timeline focused on full-stack delivery, backend
-					architecture, and production reliability.
-				</p>
-			</section>
+			<div className={styles.page}>
+				<section className={styles.hero}>
+					<div className={`${styles.container} ${styles.heroInner}`}>
+						<div><span className={styles.kicker}>Production track record</span><h1 className={styles.title}>Experience across products, platforms &amp; <span>critical systems.</span></h1><p className={styles.lead}>A career focused on full-stack delivery, backend architecture, infrastructure, and calm problem-solving in production.</p></div>
+						<p className={styles.heroNote}><strong>2016 — present</strong>Hands-on work across e-commerce, enterprise platforms, infrastructure, and government-related services.</p>
+					</div>
+				</section>
 
-			<section className='mt-8 space-y-6'>
-				{experience.map((item) => (
-					<article
-						key={`${item.company}-${item.period}`}
-						className='rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-6 shadow-sm'
-					>
-						<div className='flex items-center gap-2'>
-							<Image src={`/${item.logo}`} alt={item.company} width={150} height={150} />
+				<section className={styles.section}>
+					<div className={styles.container}>
+						<div className={styles.timeline}>
+							{experience.map((item) => <article className={styles.experienceCard} key={`${item.company}-${item.period}`}>
+								<div className={styles.logoSlot}><Image src={`/${item.logo}`} alt={`${item.company} logo`} width={56} height={56} /></div>
+								<div><div className={styles.experienceTop}><div><h2>{item.role} · {item.company}</h2><p className={styles.meta}>{item.location} · {item.duration}</p></div><span>{item.period}</span></div><p className={styles.summary}>{item.summary}</p><ul className={styles.bulletList}>{item.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}</ul></div>
+							</article>)}
 						</div>
-						<div className='flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between'>
-							<h2 className='text-xl font-semibold text-zinc-900 dark:text-zinc-100'>
-								{item.role} - {item.company}
-							</h2>
-							<p className='text-sm text-zinc-500 dark:text-zinc-400'>{item.period}</p>
-						</div>
-						<p className='mt-1 text-sm text-zinc-500 dark:text-zinc-400'>{item.location}</p>
-						<p className='mt-4 text-sm leading-6 text-zinc-700 dark:text-zinc-200'>{item.summary}</p>
-						<ul className='mt-4 space-y-2 text-sm leading-6 text-zinc-700 dark:text-zinc-200'>
-							{item.highlights.map((highlight) => (
-								<li key={highlight}>- {highlight}</li>
-							))}
-						</ul>
-					</article>
-				))}
-			</section>
+					</div>
+				</section>
+			</div>
 		</SiteShell>
 	)
 }

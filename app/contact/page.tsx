@@ -1,132 +1,44 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { SiteShell } from '@/components/site/site-shell'
 import { profile } from '@/lib/resume-data'
+import styles from '../pages.module.css'
+
+export const metadata: Metadata = {
+	title: 'Contact | Larry Parba',
+	description: 'Discuss a web product, infrastructure challenge, email system, or AI automation project with Larry Parba.',
+}
 
 export default function ContactPage () {
 	return (
 		<SiteShell>
-			<section>
-				<h1 className='text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100'>Contact</h1>
-				<p className='mt-3 max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-200'>
-					Open to work, collaborations, consulting, and full-time opportunities. Please contact me if you have any questions or would like to discuss a project.
-				</p>
-			</section>
-
-			<section className='mt-8 max-w-2xl rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/70 p-6 shadow-sm'>
-				<h2 className='text-lg font-semibold text-zinc-900 dark:text-zinc-100'>Get in touch</h2>
-				<div className='mt-4 space-y-3 text-sm text-zinc-700 dark:text-zinc-200'>
-					<p>
-						Email:{' '}
-						<Link
-							href={`mailto:${profile.email}`}
-							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
-						>
-							{profile.email}
-						</Link>
-					</p>
-					<p>
-						GitHub:{' '}
-						<Link
-							href={profile.github}
-							target='_blank'
-							rel='noreferrer'
-							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
-						>
-							github.com/Larzz
-						</Link>
-					</p>
-
-					<p>
-						LinkedIn:{' '}
-						<Link
-							href={profile.linkedin}
-							target='_blank'
-							rel='noreferrer'
-							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
-						>
-							linkedin.com/in/larry-parba-52509699/
-						</Link>
-					</p>
-
-					<p>
-						X:{' '}
-						<Link
-							href={profile.twitter}
-							target='_blank'
-							rel='noreferrer'
-							className='text-zinc-900 dark:text-zinc-100 underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 transition-colors hover:text-rose-500'
-						>
-							x.com/Larry_Parba
-						</Link>
-					</p>
-					<div className='mt-8 border-t border-zinc-200 pt-6 dark:border-zinc-800'>
-						<h3 className='text-base font-semibold text-zinc-900 dark:text-zinc-100'>
-							Ready to build something great?
-						</h3>
-						<p className='mt-2 text-sm text-zinc-700 dark:text-zinc-300'>
-							I am currently open to full-time remote roles and contract projects.
-						</p>
-
-						<div className='mt-4 flex flex-wrap gap-3'>
-							<Link
-								href={`mailto:${profile.email}`}
-								className='inline-flex text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:text-zinc-100 dark:decoration-zinc-700'
-							>
-								Email me
-							</Link>
-							<Link
-								href='/Larry_Parba_Resume.pdf'
-								className='inline-flex text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:text-zinc-100 dark:decoration-zinc-700'
-							>
-								Download resume
-							</Link>
-							<Link
-								href='https://calendly.com/larry-parba'
-								target='_blank'
-								rel='noreferrer'
-								className='inline-flex text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-rose-500 dark:text-zinc-100 dark:decoration-zinc-700'
-							>
-								Schedule a 30-min chat
-							</Link>
-						</div>
-
-						<form
-							action='https://formspree.io/f/maqaeekl'
-							method='POST'
-							className='mt-6 space-y-4'
-						>
-							<input
-								type='text'
-								name='name'
-								placeholder='Your Name'
-								required
-								className='w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400'
-							/>
-							<input
-								type='email'
-								name='email'
-								placeholder='Your Email'
-								required
-								className='w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400'
-							/>
-							<textarea
-								name='message'
-								placeholder='Tell me about your project...'
-								rows={4}
-								required
-								className='w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-400'
-							/>
-							<button
-								type='submit'
-								className='w-full rounded-lg bg-blue-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700'
-							>
-								Send message
-							</button>
-						</form>
+			<div className={styles.page}>
+				<section className={styles.hero}>
+					<div className={`${styles.container} ${styles.heroInner}`}>
+						<div><span className={styles.kicker}>Direct access</span><h1 className={styles.title}>Let&apos;s make the next technical move <span>clear and actionable.</span></h1><p className={styles.lead}>Tell me what you are building, where the bottleneck is, or what needs to become more reliable.</p></div>
+						<p className={styles.heroNote}><strong>Project or role inquiry</strong>Open to focused consulting, ongoing technical support, and the right full-time remote opportunities.</p>
 					</div>
-				</div>
-			</section>
+				</section>
+
+				<section className={styles.section}>
+					<div className={`${styles.container} ${styles.contactGrid}`}>
+						<div className={styles.formCard}>
+							<h2>Tell me about the work</h2>
+							<form className={styles.form} action='https://formspree.io/f/maqaeekl' method='POST'>
+								<div className={styles.formRow}><label className={styles.field}>Your name<input required name='name' type='text' placeholder='e.g. Alex Henderson' /></label><label className={styles.field}>Work email<input required name='email' type='email' placeholder='alex@company.com' /></label></div>
+								<label className={styles.field}>Project brief / challenge<textarea name='message' required rows={6} placeholder="What are you building, fixing, or trying to automate?" /></label>
+								<button className={styles.submit} type='submit'>Request a consultation</button>
+							</form>
+						</div>
+						<aside className={styles.sidebarCard}>
+							<span className={styles.kicker}>Other channels</span><h2>Connect directly</h2>
+							<div className={styles.contactList}><a href={`mailto:${profile.email}`}>{profile.email}</a><Link href={profile.github} target='_blank' rel='noreferrer'>GitHub · Larzz</Link><Link href={profile.linkedin} target='_blank' rel='noreferrer'>LinkedIn · Larry Parba</Link><Link href={profile.twitter} target='_blank' rel='noreferrer'>X · @Larry_Parba</Link><Link href='/Larry_Parba_Resume.pdf'>Download résumé</Link></div>
+							<p className={styles.availability}>Currently available for new projects and conversations about remote engineering roles.</p>
+						</aside>
+					</div>
+				</section>
+			</div>
 		</SiteShell>
 	)
 }
