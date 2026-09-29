@@ -33,7 +33,7 @@ export default function ContactPage () {
 						</div>
 						<aside className={styles.sidebarCard}>
 							<span className={styles.kicker}>Other channels</span><h2>Connect directly</h2>
-							<div className={styles.contactList}><a href={`mailto:${profile.email}`}>{profile.email}</a><Link href={profile.github} target='_blank' rel='noreferrer'>GitHub · Larzz</Link><Link href={profile.linkedin} target='_blank' rel='noreferrer'>LinkedIn · Larry Parba</Link><Link href={profile.twitter} target='_blank' rel='noreferrer'>X · @Larry_Parba</Link><Link href='/Larry_Parba_Resume.pdf'>Download résumé</Link></div>
+							<div className={styles.contactList}><a href={`mailto:${profile.email}`}>{profile.email}</a><Link href={profile.github} target='_blank' rel='noreferrer'>GitHub · Larzz</Link><Link href={profile.linkedin} target='_blank' rel='noreferrer'>LinkedIn · Larry Parba</Link><Link href={profile.twitter} target='_blank' rel='noreferrer'>X · @Larry_Parba</Link><Link href='/cv'>View CV</Link></div>
 							<p className={styles.availability}>Currently available for new projects and conversations about remote engineering roles.</p>
 						</aside>
 					</div>

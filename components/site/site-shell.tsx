@@ -14,6 +14,7 @@ const navItems = [
 	{ href: '/#pipeline', label: 'AI Pipeline' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/blog', label: 'Blog' },
+	{ href: '/cv', label: 'CV' },
 	{ href: '/#booking', label: 'Consultation' },
 ]
 
@@ -95,7 +96,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 							<p>Full-stack digital engineering &amp; infrastructure consultancy.</p>
 						</div>
 						<nav aria-label='Footer navigation'>
-							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/contact'>Contact</Link>
+							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/cv'>CV</Link><Link href='/contact'>Contact</Link>
 						</nav>
 					</div>
 					<div className={styles.footerBottom}>
