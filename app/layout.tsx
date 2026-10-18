@@ -26,9 +26,6 @@ export const metadata: Metadata = {
 	metadataBase: new URL('https://larryparba.com'),
 	title: 'Larry Parba — Full-Stack Engineer & Systems Consultant',
 	description: 'Scalable web applications, production infrastructure, email systems, and AI automation by Larry Parba.',
-	icons: {
-		icon: '/favicon.ico',
-	},
 	openGraph: {
 		type: 'website',
 		url: '/',
@@ -56,12 +53,7 @@ export default function RootLayout({
 						__html: `(function(){try{var stored=localStorage.getItem('theme-preference');var hasStored=stored==='light'||stored==='dark';var systemDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var theme=hasStored?stored:(systemDark?'dark':'light');var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(theme)}catch(e){}})()`,
 					}}
 				/>
-
-				{/* Favicon & Theme */}
-				<link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32' />
-				<link rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16' />
 				<meta name='theme-color' content='#2563eb' />
-
 			</head>
 
 			<GoogleAnalytics gaId="G-WKBDP55SD0" />
