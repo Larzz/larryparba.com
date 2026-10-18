@@ -1,6 +1,7 @@
 'use client'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookMessenger, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faCalendarCheck, faTerminal, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -54,6 +55,14 @@ export function SiteShell ({ children }: SiteShellProps) {
 						</nav>
 
 						<div className={styles.headerActions}>
+							<div className={styles.socialActions} aria-label='Social links'>
+								<a href={profile.messenger} target='_blank' rel='noopener noreferrer' aria-label='Message Larry on Messenger' title='Messenger'>
+									<FontAwesomeIcon icon={faFacebookMessenger} />
+								</a>
+								<a href={profile.twitter} target='_blank' rel='noopener noreferrer' aria-label='Follow Larry on X' title='X'>
+									<FontAwesomeIcon icon={faXTwitter} />
+								</a>
+							</div>
 							<Link href='/#booking' className={styles.primaryButton}>
 								<FontAwesomeIcon icon={faCalendarCheck} /> Book Call
 							</Link>
@@ -81,6 +90,10 @@ export function SiteShell ({ children }: SiteShellProps) {
 						<nav>
 							{navItems.map((item) => <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className={isActive(item.href) ? styles.drawerActive : undefined}>{item.label}</Link>)}
 						</nav>
+						<div className={styles.drawerSocials}>
+							<a href={profile.messenger} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faFacebookMessenger} /> Messenger</a>
+							<a href={profile.twitter} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faXTwitter} /> X / Twitter</a>
+						</div>
 						<Link href='/#booking' className={styles.primaryButton} onClick={() => setMenuOpen(false)}><FontAwesomeIcon icon={faCalendarCheck} /> Schedule Discovery</Link>
 					</aside>
 				</div>

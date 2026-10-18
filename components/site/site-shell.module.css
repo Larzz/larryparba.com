@@ -40,7 +40,11 @@
 .desktopNav { display: flex; align-items: center; justify-content: center; gap: 30px; }
 .desktopNav a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color .18s ease; }
 .desktopNav a:hover, .desktopNav .activeNav { color: var(--blue-dark); }
-.headerActions { display: flex; min-width: 300px; align-items: center; justify-content: flex-end; gap: 12px; }
+.headerActions { display: flex; min-width: 300px; align-items: center; justify-content: flex-end; gap: 10px; }
+.socialActions { display: flex; align-items: center; gap: 6px; }
+.socialActions a { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted); transition: border-color .18s ease, color .18s ease, transform .18s ease; }
+.socialActions a:hover { transform: translateY(-1px); border-color: #bae6fd; color: var(--blue-dark); }
+.socialActions svg { width: 14px; }
 .primaryButton { display: inline-flex; min-height: 34px; align-items: center; justify-content: center; gap: 8px; border-radius: 6px; background: var(--blue); padding: 8px 13px; color: #fff; font-family: var(--font-space-grotesk), Arial, sans-serif; font-size: 12px; font-weight: 700; box-shadow: 0 1px 2px rgba(2,132,199,.2); transition: background .18s ease, transform .18s ease; }
 .primaryButton:hover { background: var(--blue-dark); transform: translateY(-1px); }
 .primaryButton svg { width: 14px; }
@@ -67,6 +71,10 @@
 .drawer nav { display: grid; gap: 4px; margin: 36px 0 auto; }
 .drawer nav a { border-radius: 8px; padding: 13px 14px; color: var(--muted); font-size: 16px; font-weight: 650; }
 .drawer nav a:hover, .drawer nav .drawerActive { background: #f0f9ff; color: var(--blue-dark); }
+.drawerSocials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 14px; }
+.drawerSocials a { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 13px; font-weight: 650; }
+.drawerSocials a:hover { border-color: #bae6fd; color: var(--blue-dark); }
+.drawerSocials svg { width: 14px; }
 
 @media (max-width: 1000px) {
 	.brandGroup, .headerActions { min-width: auto; }
@@ -91,5 +99,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.primaryButton { transition: none; }
+	.primaryButton, .socialActions a { transition: none; }
 }

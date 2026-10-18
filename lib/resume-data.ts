@@ -36,6 +36,7 @@ export const profile = {
 	education:
 		'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
 	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/',
+	messenger: 'https://www.messenger.com/e2ee/t/ambrosiass',
 	twitter: 'https://x.com/Larry_Parba',
 }
 
