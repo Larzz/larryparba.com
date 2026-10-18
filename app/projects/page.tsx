@@ -18,7 +18,7 @@ export default function ProjectsPage () {
 				<section className={styles.hero}>
 					<div className={`${styles.container} ${styles.heroInner}`}>
 						<div><span className={styles.kicker}>Selected work</span><h1 className={styles.title}>Products that work beyond the <span>launch screen.</span></h1><p className={styles.lead}>A selection of websites and platforms I helped build, maintain, or scale in production.</p></div>
-						<p className={styles.heroNote}><strong>10+ selected projects</strong>E-commerce, enterprise workflows, real-time products, and high-trust public services.</p>
+						<p className={styles.heroNote}><strong>15+ selected projects</strong>Digital products, e-commerce, enterprise workflows, real-time platforms, and high-trust public services.</p>
 					</div>
 				</section>
 
@@ -26,8 +26,8 @@ export default function ProjectsPage () {
 					<div className={styles.container}>
 						<div className={styles.cardGrid}>
 							{featuredProjects.map((project) => <article className={`${styles.card} ${styles.projectCard}`} key={project.name}>
-								<Link href={`/projects/${project.slug}`} className={styles.projectImageWrap}><Image src={project.image} alt={project.imageAlt} width={1200} height={720} className={styles.projectImage} unoptimized priority={project.slug === 'vijit-pillai-art' || project.slug === 'adio-luxury'} /></Link>
-								<div className={styles.projectBody}><h2>{project.name}</h2><p>{project.summary}</p><ul className={styles.tags}>{project.technologies.slice(0, 4).map(technology => <li key={technology}>{technology}</li>)}</ul><div className={styles.projectLinks}><Link href={`/projects/${project.slug}`} className={styles.textLink}>View case details →</Link><Link href={project.url} target='_blank' rel='noreferrer' className={styles.textLink}>Visit project ↗</Link></div></div>
+								<Link href={`/projects/${project.slug}`} className={styles.projectImageWrap}><Image src={project.image} alt={project.imageAlt} width={1200} height={720} sizes='(max-width: 720px) calc(100vw - 40px), (max-width: 1280px) calc(50vw - 42px), 598px' className={styles.projectImage} priority={project.slug === 'davao-lease' || project.slug === 'pahatud-food'} /></Link>
+								<div className={styles.projectBody}><span className={styles.projectCategory}>{project.category}</span><h2>{project.name}</h2><p>{project.summary}</p><ul className={styles.tags}>{project.technologies.slice(0, 4).map(technology => <li key={technology}>{technology}</li>)}</ul><div className={styles.projectLinks}><Link href={`/projects/${project.slug}`} className={styles.textLink}>View case details →</Link><Link href={project.url} target='_blank' rel='noreferrer' className={styles.textLink}>Visit project ↗</Link></div></div>
 							</article>)}
 						</div>
 					</div>

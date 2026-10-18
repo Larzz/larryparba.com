@@ -12,6 +12,7 @@ export interface ExperienceItem {
 export interface ProjectItem {
 	name: string
 	slug: string
+	category: string
 	url: string
 	summary: string
 	description: string
@@ -109,8 +110,212 @@ export const experience: ExperienceItem[] = [
 
 export const featuredProjects: ProjectItem[] = [
 	{
+		name: 'DavaoLease',
+		slug: 'davao-lease',
+		category: 'Product',
+		url: 'https://www.davaolease.ph',
+		summary:
+			'A verified property marketplace for discovering homes and condos for rent or sale across Davao City.',
+		description:
+			'Built a focused real-estate marketplace that connects renters and buyers with verified local listings and agents. The product combines property discovery, detailed search filters, featured inventory, and agent inquiry workflows in a responsive experience.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Marketplace'],
+		logo: 'projects/davaolease.ph.png',
+		image: '/projects/davao-lease.webp',
+		imageAlt: 'DavaoLease property marketplace homepage preview',
+		responsibilities: [
+			'Led the full-stack implementation of the marketplace and its responsive customer-facing experience.',
+			'Built structured property discovery flows for rental and for-sale listings across Davao City.',
+			'Developed search and filtering controls for property type, location, rooms, and budget.',
+			'Implemented listing presentation, featured inventory, and direct agent inquiry workflows.',
+			'Created reusable UI patterns for property cards, location discovery, and category landing sections.',
+		],
+		keyFeatures: [
+			'Verified property and agent marketplace',
+			'Rent and buy discovery journeys',
+			'Multi-criteria property search',
+			'Featured listings and popular locations',
+			'Direct customer-to-agent inquiries',
+			'Responsive product experience',
+		],
+	},
+	{
+		name: 'PahatudFood',
+		slug: 'pahatud-food',
+		category: 'Product',
+		url: 'https://pahatud.com',
+		summary:
+			'A local food-delivery marketplace connecting Davao diners with neighborhood restaurants and delivery partners.',
+		description:
+			'Built a local food-delivery product around restaurant discovery, mobile ordering, delivery tracking, and partner onboarding. The platform gives customers a simple ordering journey while helping local restaurants reach more customers.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Marketplace'],
+		logo: 'projects/pahatud.com.png',
+		image: '/projects/pahatud-food.webp',
+		imageAlt: 'PahatudFood local food delivery product homepage preview',
+		responsibilities: [
+			'Led the full-stack implementation of the customer and restaurant-partner experiences.',
+			'Built restaurant discovery, menu browsing, ordering, and delivery-status workflows.',
+			'Developed a structured onboarding flow for local restaurant partners.',
+			'Implemented responsive interfaces that support both mobile-first customers and business users.',
+			'Created scalable content and partner-management workflows for continued marketplace growth.',
+		],
+		keyFeatures: [
+			'Local restaurant marketplace',
+			'Mobile-first food ordering',
+			'Order confirmation and delivery tracking',
+			'Restaurant partner onboarding',
+			'Partner discovery and promotion',
+			'Responsive customer experience',
+		],
+	},
+	{
+		name: 'Solene',
+		slug: 'solene',
+		category: 'Product',
+		url: 'https://www.solene.ph',
+		summary:
+			'A beauty-services marketplace helping clients discover and book verified makeup artists in Davao City.',
+		description:
+			'Built a two-sided marketplace for clients and makeup artists, combining service-based discovery, local search, artist profiles, portfolio inspiration, and booking journeys in a polished beauty-focused interface.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Marketplace'],
+		logo: 'projects/solene.ph.png',
+		image: '/projects/solene.webp',
+		imageAlt: 'Solene makeup artist marketplace homepage preview',
+		responsibilities: [
+			'Led the full-stack implementation of the client and artist marketplace journeys.',
+			'Built service, location, and name-based artist discovery with structured search controls.',
+			'Developed artist profile, portfolio, pricing, and booking presentation workflows.',
+			'Created artist onboarding and marketplace growth touchpoints across the product.',
+			'Implemented responsive, reusable interfaces aligned with the Solene visual identity.',
+		],
+		keyFeatures: [
+			'Local makeup artist marketplace',
+			'Service and location-based search',
+			'Artist profiles and portfolios',
+			'Client booking journeys',
+			'Artist onboarding experience',
+			'Beauty inspiration discovery',
+		],
+	},
+	{
+		name: 'Ken Global Transport Corporation',
+		slug: 'ken-global',
+		category: 'Corporate Website',
+		url: 'https://kenglobal.com.ph',
+		summary:
+			'A logistics company website presenting freight, distribution, warehousing, and customs services across the Philippines.',
+		description:
+			'Developed a modern corporate website for a Philippine logistics provider, with a clear service architecture, trust-building company content, and quote-generation pathways for prospective customers.',
+		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/kenglobal.com.ph.png',
+		image: '/projects/ken-global.webp',
+		imageAlt: 'Ken Global Transport Corporation website homepage preview',
+		responsibilities: [
+			'Implemented the responsive corporate website from the supplied brand direction.',
+			'Structured service content for freight forwarding, distribution, logistics, warehousing, and customs clearance.',
+			'Built clear quote-request and contact pathways to support lead generation.',
+			'Created reusable sections for company positioning, services, locations, and trust signals.',
+			'Optimized the page hierarchy and responsive behavior across common device sizes.',
+		],
+		keyFeatures: [
+			'Corporate logistics website',
+			'Service-led content architecture',
+			'Quote-request conversion flow',
+			'Company and location presentation',
+			'Responsive frontend implementation',
+			'Lead-generation contact experience',
+		],
+	},
+	{
+		name: 'Conversion Circle Solutions',
+		slug: 'conversion-circle-solutions',
+		category: 'Lead Generation Website',
+		url: 'https://conversioncirclesolutions.com',
+		summary:
+			'A conversion-focused agency website built to turn qualified service-business traffic into assessment leads.',
+		description:
+			'Developed a conversion-led marketing site that explains the agency method, demonstrates measurable client outcomes, builds founder trust, and drives qualified visitors toward a structured assessment form.',
+		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL'],
+		logo: 'projects/conversioncirclesolutions.com.png',
+		image: '/projects/conversion-circle-solutions.webp',
+		imageAlt: 'Conversion Circle Solutions agency website homepage preview',
+		responsibilities: [
+			'Implemented a responsive, conversion-focused website around the agency positioning and offer.',
+			'Built reusable content sections for the process, founder profile, case studies, testimonials, and FAQs.',
+			'Developed the lead-assessment form and supporting validation workflows.',
+			'Created clear conversion paths and calls to action throughout the long-form page.',
+			'Optimized the interface for readability, trust, and consistent behavior across devices.',
+		],
+		keyFeatures: [
+			'Conversion-focused landing experience',
+			'Lead assessment workflow',
+			'Case study and testimonial content',
+			'Method and process visualization',
+			'FAQ and objection handling',
+			'Responsive long-form layout',
+		],
+	},
+	{
+		name: 'Monili Jewellers',
+		slug: 'monili-jewellers',
+		category: 'E-commerce',
+		url: 'https://monilijewellers.com',
+		summary:
+			'A luxury jewellery storefront featuring curated collections, product discovery, gifting, and customer-service journeys.',
+		description:
+			'Developed and maintained an e-commerce experience for a luxury jewellery brand, combining collection-based shopping, rich product presentation, store discovery, and customer-support touchpoints.',
+		technologies: ['E-commerce', 'PHP', 'JavaScript', 'MySQL', 'Payment Gateway Integration'],
+		logo: 'projects/monilijewellers.com.png',
+		image: '/projects/monili-jewellers.webp',
+		imageAlt: 'Monili Jewellers luxury e-commerce homepage preview',
+		responsibilities: [
+			'Implemented and maintained the responsive luxury storefront experience.',
+			'Built collection and category discovery flows across the jewellery catalog.',
+			'Developed product presentation, gifting, favorites, and customer-service touchpoints.',
+			'Supported commerce content updates and ongoing storefront enhancements.',
+			'Optimized the interface for premium visual presentation across desktop and mobile.',
+		],
+		keyFeatures: [
+			'Luxury jewellery storefront',
+			'Collection and category browsing',
+			'Product discovery and favorites',
+			'Gift card and gifting journeys',
+			'Store-location presentation',
+			'Responsive e-commerce experience',
+		],
+	},
+	{
+		name: 'Lanka Princess',
+		slug: 'lanka-princess',
+		category: 'Hospitality Website',
+		url: 'https://www.lankaprincess.de',
+		summary:
+			'A multilingual Ayurveda hotel website presenting rooms, treatments, dining, wellness programs, and booking offers.',
+		description:
+			'Developed and maintained a content-rich hospitality website for an Ayurveda resort in Sri Lanka, bringing rooms, wellness treatments, dining, yoga programs, special offers, and guest inquiries into one coherent experience.',
+		technologies: ['WordPress', 'PHP', 'JavaScript', 'MySQL', 'Multilingual Content'],
+		logo: 'projects/lankaprincess.de.png',
+		image: '/projects/lanka-princess.webp',
+		imageAlt: 'Lanka Princess Ayurveda hotel website homepage preview',
+		responsibilities: [
+			'Implemented and maintained the responsive hospitality website and its content-rich page structure.',
+			'Developed presentation sections for rooms, Ayurveda treatments, gastronomy, and wellness programs.',
+			'Supported multilingual content and international guest journeys.',
+			'Built inquiry and offer-discovery touchpoints for prospective guests.',
+			'Optimized media presentation and responsive behavior across the long-form experience.',
+		],
+		keyFeatures: [
+			'Multilingual hospitality website',
+			'Room and treatment discovery',
+			'Ayurveda and wellness content',
+			'Special offer presentation',
+			'Guest inquiry workflow',
+			'Responsive media-rich experience',
+		],
+	},
+	{
 		name: 'Vijit Pillai Art',
 		slug: 'vijit-pillai-art',
+		category: 'E-commerce',
 		url: 'https://vijitpillai.com',
 		summary:
 			'Luxury art e-commerce platform with CMS content, Stripe payments, DHL shipping, and automated order workflows.',
@@ -118,7 +323,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed and maintained a full-stack e-commerce platform for luxury art sales, featuring a CMS-driven architecture, secure payment processing, and automated order management workflows.',
 		technologies: ['Laravel', 'React.js', 'Tailwind CSS', 'MySQL', 'Stripe Payment Gateway', 'DHL API Integration'],
 		logo: 'projects/vijitpillai.com.png',
-		image: '/projects/vijit-pillai-art.svg',
+		image: '/projects/vijit-pillai-art.webp',
 		imageAlt: 'Vijit Pillai Art e-commerce platform interface preview',
 		responsibilities: [
 			'Architected and integrated the complete backend infrastructure using Laravel.',
@@ -141,6 +346,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Adio Luxury',
 		slug: 'adio-luxury',
+		category: 'Brand Platform',
 		url: 'https://adioluxury.ae',
 		summary:
 			'Luxury brand platform built with Laravel, Inertia.js, dynamic content management, and scalable form workflows.',
@@ -148,7 +354,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed and currently maintaining a full-stack luxury brand platform built with a modern Laravel and Inertia.js architecture, enabling seamless server-side rendering, dynamic content management, and scalable form processing workflows.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
 		logo: 'projects/adioluxury.ae.png',
-		image: '/projects/adio-luxury.svg',
+		image: '/projects/adio-luxury.webp',
 		imageAlt: 'Adio Luxury brand platform interface preview',
 		responsibilities: [
 			'Led the full-stack development of the platform, covering both backend architecture and frontend implementation.',
@@ -173,6 +379,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Mowasalat',
 		slug: 'mowasalat',
+		category: 'Government Platform',
 		url: 'https://mowasalat.ae',
 		summary:
 			'Government service registration system with multi-step citizen applications and centralized admin management.',
@@ -180,7 +387,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed a government service registration platform designed to handle structured citizen application workflows, multi-step form processing, and centralized administrative management.',
 		technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
 		logo: 'projects/mowasalat.ae.png',
-		image: '/projects/mowasalat.svg',
+		image: '/projects/mowasalat.webp',
 		imageAlt: 'Mowasalat registration platform interface preview',
 		responsibilities: [
 			'Led the complete full-stack development of the platform, covering both frontend and backend implementation.',
@@ -205,6 +412,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Tip2gether',
 		slug: 'tip2gether',
+		category: 'Web Application',
 		url: 'https://tip2gether.com',
 		summary:
 			'Real-time sports team coordination platform for event participation, live interactions, and activity workflows.',
@@ -212,7 +420,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed a real-time sports team coordination platform designed to manage event participation, live team interactions, and dynamic activity workflows.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Pusher'],
 		logo: 'projects/tip2get.com.png',
-		image: '/projects/tip2gether.svg',
+		image: '/projects/tip2gether.webp',
 		imageAlt: 'Tip2gether team coordination platform interface preview',
 		responsibilities: [
 			'Led the full-stack development of the platform, covering both backend architecture and frontend implementation.',
@@ -236,6 +444,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'KMK Perfumes',
 		slug: 'kmk-perfumes',
+		category: 'E-commerce',
 		url: 'https://kmkperfumes.com',
 		summary:
 			'Luxury perfume e-commerce platform with product collections, multilingual browsing, and checkout workflows.',
@@ -243,7 +452,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed and maintained a full-featured e-commerce platform for a luxury perfume brand, focused on scalable product management, optimized checkout workflows, and performance-driven user experience enhancements. The platform supports dynamic product collections, multilingual browsing, and transactional purchasing workflows.',
 		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Payment Gateway Integration'],
 		logo: 'projects/kmkperfumes.com.png',
-		image: '/projects/kmk-perfumes.svg',
+		image: '/projects/kmk-perfumes.webp',
 		imageAlt: 'KMK Perfumes e-commerce storefront interface preview',
 		responsibilities: [
 			'Led the full-stack development of the platform, covering backend architecture and frontend implementation.',
@@ -267,6 +476,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Trans Gulf',
 		slug: 'trans-gulf',
+		category: 'Corporate Website',
 		url: 'https://transgulf.ae',
 		summary:
 			'Corporate CMS website for engineering and contracting services with inquiry and lead-generation workflows.',
@@ -274,7 +484,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed a corporate website focused on showcasing infrastructure, contracting, and engineering services through a CMS-driven architecture and business inquiry management system. The platform was designed to support scalable content management and lead generation workflows.',
 		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
 		logo: 'projects/transgulf.ae.png',
-		image: '/projects/trans-gulf.svg',
+		image: '/projects/trans-gulf.webp',
 		imageAlt: 'Trans Gulf corporate website interface preview',
 		responsibilities: [
 			'Led the full-stack development of the website, including backend systems and frontend implementation.',
@@ -297,6 +507,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Eurostar Rental',
 		slug: 'eurostar-rental',
+		category: 'Booking Platform',
 		url: 'https://eurostarrental.com',
 		summary:
 			'Vehicle booking and reservation platform with dynamic fleet listings and backend management workflows.',
@@ -327,6 +538,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Mercato Shopping Mall',
 		slug: 'mercato-shopping-mall',
+		category: 'Retail Platform',
 		url: 'https://mercatoshoppingmall.com',
 		summary:
 			'High-traffic retail platform for promotional campaigns, events, analytics, and customer engagement.',
@@ -334,7 +546,7 @@ export const featuredProjects: ProjectItem[] = [
 			'Developed and maintained a high-traffic retail platform focused on promotional campaigns, event management, and customer engagement for a major shopping mall brand.',
 		technologies: ['WordPress', 'PHP', 'jQuery', 'MySQL', 'Google Analytics'],
 		logo: 'projects/mercatoshoppingmall.com.png',
-		image: '/projects/mercato-shopping-mall.svg',
+		image: '/projects/mercato-shopping-mall.webp',
 		imageAlt: 'Mercato Shopping Mall retail platform interface preview',
 		responsibilities: [
 			'Led the full-stack development and maintenance of the website.',
@@ -357,6 +569,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Soporella',
 		slug: 'soporella',
+		category: 'Brand Website',
 		url: 'https://soporella.com',
 		summary:
 			'Brand-focused CMS website with custom UI components and scalable content presentation architecture.',
@@ -386,6 +599,7 @@ export const featuredProjects: ProjectItem[] = [
 	{
 		name: 'Shop Mesco',
 		slug: 'shop-mesco',
+		category: 'E-commerce',
 		url: 'https://shopmesco.com',
 		summary:
 			'Shopify e-commerce storefront with catalog management, Liquid theme customization, and checkout enhancements.',

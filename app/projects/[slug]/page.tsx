@@ -27,8 +27,8 @@ export default async function ProjectDetailPage ({ params }: ProjectPageProps) {
 			<div className={styles.page}>
 				<section className={styles.hero}>
 					<div className={`${styles.container} ${styles.detailGrid}`}>
-						<div className={styles.detailIntro}><Link href='/projects' className={styles.backLink}>← All projects</Link><span className={styles.kicker}>Project case detail</span><h1>{project.name}</h1><p>{project.description}</p><ul className={styles.tags}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul><div className={styles.actions}><Link href={project.url} target='_blank' rel='noreferrer' className={styles.primaryLink}>Visit live project ↗</Link></div></div>
-						<Image src={project.image} alt={project.imageAlt} width={1200} height={720} className={styles.detailImage} unoptimized priority />
+						<div className={styles.detailIntro}><Link href='/projects' className={styles.backLink}>← All projects</Link><span className={styles.kicker}>{project.category}</span><h1>{project.name}</h1><p>{project.description}</p><ul className={styles.tags}>{project.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul><div className={styles.actions}><Link href={project.url} target='_blank' rel='noreferrer' className={styles.primaryLink}>Visit live project ↗</Link></div></div>
+						<Image src={project.image} alt={project.imageAlt} width={1200} height={720} sizes='(max-width: 900px) calc(100vw - 40px), 420px' className={styles.detailImage} priority />
 					</div>
 				</section>
 
