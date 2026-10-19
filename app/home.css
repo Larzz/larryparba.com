@@ -24,3 +24,45 @@
 @media(max-width:480px){.brand{font-size:16px}.eyebrow-pill{font-size:8px}.metrics{grid-template-columns:1fr;max-width:300px}.metric{min-height:118px}.pipeline-grid{grid-template-columns:1fr}.pipeline-status{display:grid}.quote-card{padding:21px}.quote-top{align-items:start;flex-direction:column}.quote-card blockquote{font-size:18px}.quote-footer{flex-wrap:wrap}.quote-footer a{margin-left:0;width:100%}.focus-options,.form-row{grid-template-columns:1fr}.focus-options label:last-child{grid-column:auto}.consultation-form{padding:18px}}
 @media(min-width:721px){.hero-copy h1{max-width:750px}.services-section{padding-bottom:78px}.pipeline-section{padding-bottom:84px}.results-section{padding-bottom:80px}.booking-section{padding-bottom:109px}.narrow{max-width:900px}.quote-wrap{max-width:810px}}
 @media(min-width:721px){.services-grid>.service-card:nth-child(n+4){min-height:370px}.pipeline-section{padding-bottom:74px}.results-section{padding-top:66px;padding-bottom:60px}.booking-section{padding-bottom:137px}}
+
+/* Featured work and consultation clarity */
+.featured-projects-section{background:#fff;border-bottom:1px solid var(--line)}
+.featured-projects-intro{max-width:420px}
+.featured-projects-intro>a{display:inline-flex;align-items:center;gap:5px;margin-top:9px;color:var(--blue-dark);font:600 11px var(--font-jetbrains-mono),monospace}
+.featured-projects-intro .material-symbols-outlined{font-size:14px}
+.featured-projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.featured-project-card{overflow:hidden;display:flex;min-width:0;flex-direction:column}
+.featured-project-image{display:block;aspect-ratio:5/3;overflow:hidden;background:#e2e8f0;border-bottom:1px solid var(--line)}
+.featured-project-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.featured-project-card:hover .featured-project-image img{transform:scale(1.025)}
+.featured-project-body{display:flex;flex:1;flex-direction:column;padding:22px}
+.featured-project-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;font:600 9px/1.4 var(--font-jetbrains-mono),monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.featured-project-meta span:first-child{color:#0369a1}
+.featured-project-body h3{font-size:20px;line-height:1.2;letter-spacing:-.03em}
+.featured-project-body h3 a{color:var(--ink)}
+.featured-project-body>p{min-height:66px;margin:9px 0 18px;font-size:13px;line-height:1.55;color:var(--muted)}
+.featured-project-body .stack-list{margin-top:auto}
+.project-link{display:inline-flex;align-items:center;gap:4px;margin-top:18px;color:var(--blue-dark);font:600 11px var(--font-jetbrains-mono),monospace}
+.project-link .material-symbols-outlined{font-size:14px;transition:transform .2s}
+.project-link:hover .material-symbols-outlined{transform:translateX(3px)}
+.consultation-form legend span{color:var(--faint);font-size:11px;font-weight:500}
+.consultation-form .form-privacy{display:flex;align-items:center;justify-content:center;gap:5px;line-height:1.5}
+.form-privacy .material-symbols-outlined{font-size:14px;color:#047857}
+
+@media(max-width:1000px){
+  .featured-projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .featured-project-card:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}
+  .featured-project-card:last-child .featured-project-image{height:100%;aspect-ratio:auto;border-right:1px solid var(--line);border-bottom:0}
+}
+
+@media(max-width:720px){
+  .featured-projects-intro>a{margin-top:12px}
+  .featured-projects-grid{grid-template-columns:1fr}
+  .featured-project-card:last-child{grid-column:auto;display:flex}
+  .featured-project-card:last-child .featured-project-image{aspect-ratio:5/3;border-right:0;border-bottom:1px solid var(--line)}
+  .featured-project-body>p{min-height:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .featured-project-image img,.project-link .material-symbols-outlined{transition:none}
+}

@@ -119,7 +119,7 @@ export const featuredProjects: ProjectItem[] = [
 			'A verified property marketplace for discovering homes and condos for rent or sale across Davao City.',
 		description:
 			'Built a focused real-estate marketplace that connects renters and buyers with verified local listings and agents. The product combines property discovery, detailed search filters, featured inventory, and agent inquiry workflows in a responsive experience.',
-		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Marketplace'],
+		technologies: ['Next.js', 'PostgreSQL', 'Tailwind CSS', 'Marketplace'],
 		logo: 'projects/davaolease.ph.png',
 		image: '/projects/davao-lease.webp',
 		imageAlt: 'DavaoLease property marketplace homepage preview',
@@ -177,7 +177,7 @@ export const featuredProjects: ProjectItem[] = [
 			'A beauty-services marketplace helping clients discover and book verified makeup artists in Davao City.',
 		description:
 			'Built a two-sided marketplace for clients and makeup artists, combining service-based discovery, local search, artist profiles, portfolio inspiration, and booking journeys in a polished beauty-focused interface.',
-		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Marketplace'],
+		technologies: ['Next.js', 'React.js', 'Tailwind CSS', 'PostgreSQL', 'Marketplace'],
 		logo: 'projects/solene.ph.png',
 		image: '/projects/solene.webp',
 		imageAlt: 'Solene makeup artist marketplace homepage preview',
@@ -206,7 +206,7 @@ export const featuredProjects: ProjectItem[] = [
 			'A logistics company website presenting freight, distribution, warehousing, and customs services across the Philippines.',
 		description:
 			'Developed a modern corporate website for a Philippine logistics provider, with a clear service architecture, trust-building company content, and quote-generation pathways for prospective customers.',
-		technologies: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+		technologies: ['WordPress', 'Tailwind CSS', 'MySQL'],
 		logo: 'projects/kenglobal.com.ph.png',
 		image: '/projects/ken-global.webp',
 		imageAlt: 'Ken Global Transport Corporation website homepage preview',
@@ -235,7 +235,7 @@ export const featuredProjects: ProjectItem[] = [
 			'A conversion-focused agency website built to turn qualified service-business traffic into assessment leads.',
 		description:
 			'Developed a conversion-led marketing site that explains the agency method, demonstrates measurable client outcomes, builds founder trust, and drives qualified visitors toward a structured assessment form.',
-		technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL'],
+		technologies: ['WordPress', 'PHP', 'Tailwind CSS', 'MySQL'],
 		logo: 'projects/conversioncirclesolutions.com.png',
 		image: '/projects/conversion-circle-solutions.webp',
 		imageAlt: 'Conversion Circle Solutions agency website homepage preview',
