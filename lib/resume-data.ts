@@ -35,7 +35,7 @@ export const profile = {
 		'Full-Stack Web Developer with 9+ years of experience building scalable web applications, backend systems, and API-driven platforms across e-commerce, enterprise, and government-related projects. Specialized in Laravel architecture, RESTful APIs, system optimization, and integrating AI-driven automation into production workflows.',
 	education:
 		'Bachelor of Science in Information Technology, Holy Cross of Davao College (2015)',
-	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/',
+	linkedin: 'https://www.linkedin.com/in/larry-parba-52509699/?isSelfProfile=true',
 	messenger: 'https://www.messenger.com/e2ee/t/ambrosiass',
 	twitter: 'https://x.com/Larry_Parba',
 }
