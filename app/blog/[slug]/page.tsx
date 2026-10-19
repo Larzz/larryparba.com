@@ -14,7 +14,32 @@ export async function generateStaticParams () {
 
 export async function generateMetadata ({ params }: BlogPostPageProps): Promise<Metadata> {
 	const post = await getBlogPostBySlug((await params).slug)
-	return post ? { title: `${post.title} | Larry Parba`, description: post.excerpt } : { title: 'Article Not Found | Larry Parba' }
+	if (!post) return { title: 'Article Not Found | Larry Parba' }
+
+	const canonicalPath = `/blog/${post.slug}`
+
+	return {
+		title: `${post.title} | Larry Parba`,
+		description: post.excerpt,
+		authors: [{ name: 'Larry Parba', url: '/' }],
+		alternates: { canonical: canonicalPath },
+		openGraph: {
+			type: 'article',
+			url: canonicalPath,
+			title: post.title,
+			description: post.excerpt,
+			siteName: 'Larry Parba',
+			publishedTime: `${post.publishedAt}T00:00:00.000Z`,
+			authors: ['Larry Parba'],
+			tags: post.tags,
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: post.title,
+			description: post.excerpt,
+			creator: '@Larry_Parba',
+		},
+	}
 }
 
 function formatDate (date: string) {
