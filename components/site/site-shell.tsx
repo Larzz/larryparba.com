@@ -2,7 +2,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookMessenger, faXTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faCalendarCheck, faTerminal, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTerminal, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode, useState } from 'react'
@@ -15,8 +15,6 @@ const navItems = [
 	{ href: '/#pipeline', label: 'AI Pipeline' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/blog', label: 'Blog' },
-	{ href: '/cv', label: 'CV' },
-	{ href: '/#booking', label: 'Consultation' },
 ]
 
 interface SiteShellProps {
@@ -63,9 +61,6 @@ export function SiteShell ({ children }: SiteShellProps) {
 									<FontAwesomeIcon icon={faXTwitter} />
 								</a>
 							</div>
-							<Link href='/#booking' className={styles.primaryButton}>
-								<FontAwesomeIcon icon={faCalendarCheck} /> Book Call
-							</Link>
 							<button
 								type='button'
 								className={styles.menuButton}
@@ -94,7 +89,6 @@ export function SiteShell ({ children }: SiteShellProps) {
 							<a href={profile.messenger} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faFacebookMessenger} /> Messenger</a>
 							<a href={profile.twitter} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faXTwitter} /> X / Twitter</a>
 						</div>
-						<Link href='/#booking' className={styles.primaryButton} onClick={() => setMenuOpen(false)}><FontAwesomeIcon icon={faCalendarCheck} /> Schedule Discovery</Link>
 					</aside>
 				</div>
 			) : null}
@@ -109,7 +103,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 							<p>Full-stack digital engineering &amp; infrastructure consultancy.</p>
 						</div>
 						<nav aria-label='Footer navigation'>
-							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/cv'>CV</Link><Link href='/contact'>Contact</Link>
+							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/cv'>CV</Link><Link href='/#booking'>Consultation</Link><Link href='/contact'>Contact</Link>
 						</nav>
 					</div>
 					<div className={styles.footerBottom}>
