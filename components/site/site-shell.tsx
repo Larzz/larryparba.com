@@ -1,7 +1,7 @@
 'use client'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookMessenger, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookMessenger, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -61,6 +61,9 @@ export function SiteShell ({ children }: SiteShellProps) {
 								<a href={profile.messenger} target='_blank' rel='noopener noreferrer' aria-label='Message Larry on Messenger' title='Messenger'>
 									<FontAwesomeIcon icon={faFacebookMessenger} />
 								</a>
+								<a href={profile.github} target='_blank' rel='noopener noreferrer' aria-label='View Larry on GitHub' title='GitHub'>
+									<FontAwesomeIcon icon={faGithub} />
+								</a>
 								<a href={profile.twitter} target='_blank' rel='noopener noreferrer' aria-label='Follow Larry on X' title='X'>
 									<FontAwesomeIcon icon={faXTwitter} />
 								</a>
@@ -91,7 +94,8 @@ export function SiteShell ({ children }: SiteShellProps) {
 						</nav>
 						<div className={styles.drawerSocials}>
 							<a href={profile.messenger} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faFacebookMessenger} /> Messenger</a>
-							<a href={profile.twitter} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faXTwitter} /> X / Twitter</a>
+							<a href={profile.github} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faGithub} /> GitHub</a>
+							<a href={profile.twitter} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faXTwitter} /> X</a>
 						</div>
 					</aside>
 				</div>

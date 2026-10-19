@@ -72,7 +72,7 @@
 .drawer nav { display: grid; gap: 4px; margin: 36px 0 auto; }
 .drawer nav a { border-radius: 8px; padding: 13px 14px; color: var(--muted); font-size: 16px; font-weight: 650; }
 .drawer nav a:hover, .drawer nav .drawerActive { background: #f0f9ff; color: var(--blue-dark); }
-.drawerSocials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 14px; }
+.drawerSocials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 14px; }
 .drawerSocials a { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 13px; font-weight: 650; }
 .drawerSocials a:hover { border-color: #bae6fd; color: var(--blue-dark); }
 .drawerSocials svg { width: 14px; }
@@ -95,6 +95,7 @@
 
 @media (max-width: 560px) {
 	.container { width: min(100% - 32px, 1216px); }
+	.drawerSocials a { flex-direction: column; gap: 5px; padding: 8px 4px; font-size: 11px; }
 	.footerMain nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	.footerBottom { flex-direction: column; }
 }
