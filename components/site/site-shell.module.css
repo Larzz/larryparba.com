@@ -30,13 +30,14 @@
 }
 
 .headerInner { height: var(--header-content-height); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brandGroup { display: flex; min-width: 300px; align-items: center; gap: 16px; }
+.brandGroup { display: flex; min-width: 300px; align-items: center; }
 .brand, .footerBrand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-family: var(--font-space-grotesk), Arial, sans-serif; font-weight: 700; }
 .brand { font-size: 18px; letter-spacing: -.04em; white-space: nowrap; }
-.brandMark { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #bae6fd; border-radius: 8px; background: #f0f9ff; color: var(--blue); }
-.brandMark svg { width: 17px; }
-.availability { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #a7f3d0; border-radius: 999px; background: #ecfdf5; padding: 3px 9px; color: #047857; font-family: var(--font-jetbrains-mono), monospace; font-size: 10px; font-weight: 600; white-space: nowrap; }
-.statusDot { width: 7px; height: 7px; flex: none; border-radius: 50%; background: #10b981; }
+.brandLogo { width: 36px; height: 36px; flex: none; border-radius: 9px; }
+.brandCopy { display: grid; gap: 4px; }
+.brandName { line-height: 1; }
+.availability { display: inline-flex; align-items: center; gap: 6px; color: #047857; font-family: var(--font-jetbrains-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: normal; line-height: 1; white-space: nowrap; }
+.statusDot { width: 6px; height: 6px; flex: none; border-radius: 50%; background: #10b981; }
 .desktopNav { display: flex; align-items: center; justify-content: center; gap: 30px; }
 .desktopNav a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color .18s ease; }
 .desktopNav a:hover, .desktopNav .activeNav { color: var(--blue-dark); }
@@ -56,7 +57,7 @@
 .footer { background: #0f172a; color: #cbd5e1; }
 .footerMain { display: flex; justify-content: space-between; gap: 32px; padding: 48px 0 36px; }
 .footerBrand { color: #fff; font-size: 18px; }
-.footerBrand svg { width: 17px; color: #38bdf8; }
+.footerLogo { width: 28px; height: 28px; border-radius: 7px; }
 .footerMain p { max-width: 390px; margin: 12px 0 0; color: #94a3b8; font-size: 14px; }
 .footerMain nav { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 22px; }
 .footerMain nav a, .footerBottom a { color: #cbd5e1; font-size: 14px; transition: color .18s ease; }
@@ -88,7 +89,7 @@
 
 @media (max-width: 720px) {
 	.shell { --header-content-height: 60px; --header-top-space: 8px; }
-	.desktopNav, .availability, .headerActions > .primaryButton { display: none; }
+	.desktopNav, .headerActions > .primaryButton { display: none; }
 	.menuButton { display: grid; place-items: center; }
 }
 
