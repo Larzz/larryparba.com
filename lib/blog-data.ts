@@ -10,10 +10,12 @@ export interface BlogPost {
 	title: string
 	excerpt: string
 	publishedAt: string
+	updatedAt?: string
 	readingTime: string
 	tags: string[]
 	kicker?: string
 	sections: BlogSection[]
+	faqs: Array<{ question: string, answer: string }>
 }
 
 // This local source keeps the blog deployable before a database is connected.
@@ -71,6 +73,11 @@ const posts: BlogPost[] = [
 				],
 				action: { label: 'View my work and get in touch', href: '/contact' },
 			},
+		],
+		faqs: [
+			{ question: 'How long is maintenance included after launch?', answer: 'Routine maintenance within the agreed project scope is included for five months from launch.' },
+			{ question: 'What does the free bug support cover?', answer: 'For eight months after launch, I will fix a feature I delivered if it does not work as agreed. New features and changes outside the original agreement are quoted separately.' },
+			{ question: 'Can you train my team to use the website or system?', answer: 'Yes. Free onboarding covers the real tasks your team will handle, and you will also receive a basic user guide for common actions.' },
 		],
 	},
 	{
@@ -159,6 +166,11 @@ const posts: BlogPost[] = [
 				],
 			},
 		],
+		faqs: [
+			{ question: 'What support should I expect after my website launches?', answer: 'Your project agreement should clearly describe the handover, training, initial bug-fix period, maintenance responsibilities, and how future changes will be handled.' },
+			{ question: 'Who manages the domain, hosting, and business email?', answer: 'That responsibility should be agreed before launch. Clear ownership makes renewals, backups, and troubleshooting much easier.' },
+			{ question: 'Can my website grow after it goes live?', answer: 'Yes. Real customer and staff feedback often reveals the most useful next improvement, so features can be added as the business needs them.' },
+		],
 	},
 	{
 		slug: 'building-production-systems-that-stay-calm',
@@ -173,6 +185,10 @@ const posts: BlogPost[] = [
 			{ heading: 'Design for the operating day', paragraphs: ['The launch is one moment. The operating day is everything that follows: deploying a small fix, understanding a failed job, rotating credentials, or explaining an incident to a client. Good engineering makes those ordinary moments low-stress.'] },
 			{ heading: 'A useful definition of done', paragraphs: ['For production work, done means more than a green build. The change should be testable, observable, reversible where practical, and understandable by the next engineer who touches it.'] },
 		],
+		faqs: [
+			{ question: 'What makes a production system reliable?', answer: 'Reliable systems combine understandable boundaries, observable behavior, predictable deployments, and a recovery path the team has already considered.' },
+			{ question: 'What does “done” mean for production work?', answer: 'A production change should be testable, observable, reversible where practical, and understandable by the next engineer who maintains it.' },
+		],
 	},
 	{
 		slug: 'where-ai-automation-actually-helps',
@@ -185,6 +201,11 @@ const posts: BlogPost[] = [
 			{ paragraphs: ['AI is most valuable when it improves a workflow the team already understands. Starting with the model instead of the operational problem often creates an impressive demo that is difficult to trust or maintain.'] },
 			{ heading: 'Look for structured repetition', paragraphs: ['Strong candidates have a recognizable input, a repeatable decision, and a useful output. Lead enrichment, support triage, content classification, and document extraction often fit this pattern.'], bullets: ['The input can be validated before processing.', 'The output has a clear destination and owner.', 'A human can review uncertain or high-impact cases.'] },
 			{ heading: 'Keep the workflow observable', paragraphs: ['An automation should show what happened, what data was used, and where the result went. Logs, retry rules, cost limits, and explicit failure states are part of the product—not optional infrastructure details.'] },
+		],
+		faqs: [
+			{ question: 'Which workflows are good candidates for AI automation?', answer: 'Look for structured, repetitive work with validated inputs, a clear output and owner, and a review step for uncertain or high-impact cases.' },
+			{ question: 'Should AI replace human review?', answer: 'Not for uncertain or high-impact decisions. A person should be able to review those cases before the result reaches a customer or changes important data.' },
+			{ question: 'How do you make AI automation observable?', answer: 'Use logs, retry rules, cost limits, and explicit failure states so the team can see what happened, what data was used, and where the result went.' },
 		],
 	},
 ]

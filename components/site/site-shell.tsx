@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation'
 import { ReactNode, useState } from 'react'
 
 import brandLogo from '@/app/icon3.png'
+import { InquiryWidget } from '@/components/inquiry/inquiry-widget'
 import { profile } from '@/lib/resume-data'
 import styles from './site-shell.module.css'
 
@@ -124,6 +125,8 @@ export function SiteShell ({ children }: SiteShellProps) {
 					</div>
 				</div>
 			</footer>
+
+			<InquiryWidget />
 		</div>
 	)
 }

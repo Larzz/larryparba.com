@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { AiReferralTracker } from '@/components/analytics/ai-referral-tracker'
 
 const geist = localFont({ src: '../public/fonts/geist.woff', variable: '--font-geist', display: 'swap' })
 const spaceGrotesk = localFont({
@@ -38,6 +39,11 @@ export const metadata: Metadata = {
 		title: 'Larry Parba | Full-Stack Engineer & Systems Consultant',
 		description: 'Scalable web applications, production infrastructure, email systems, and AI automation by Larry Parba.',
 	},
+	alternates: {
+		types: {
+			'application/rss+xml': '/rss.xml',
+		},
+	},
 }
 
 export default function RootLayout({
@@ -59,6 +65,7 @@ export default function RootLayout({
 			<GoogleAnalytics gaId="G-WKBDP55SD0" />
 			<GoogleTagManager gtmId="G-WKBDP55SD0" />
 			<body className='flex min-h-full flex-col font-sans text-foreground'>
+				<AiReferralTracker />
 				{children}
 			</body>
 		</html>
