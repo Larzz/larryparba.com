@@ -1,7 +1,8 @@
 export interface BlogSection {
 	heading?: string
 	paragraphs: string[]
-	bullets?: string[]
+	bullets?: Array<string | { title: string, description: string }>
+	action?: { label: string, href: string }
 }
 
 export interface BlogPost {
@@ -11,6 +12,7 @@ export interface BlogPost {
 	publishedAt: string
 	readingTime: string
 	tags: string[]
+	kicker?: string
 	sections: BlogSection[]
 }
 
@@ -18,6 +20,59 @@ export interface BlogPost {
 // The UI only depends on getBlogPosts/getBlogPostBySlug, so these functions can
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
+	{
+		slug: 'a-website-comes-with-questions-mine-comes-with-support',
+		title: 'A Website Comes With Questions. Mine Comes With Support.',
+		excerpt: 'A clear look at the maintenance, bug support, training, and practical guidance included after your website or business system goes live.',
+		publishedAt: '2026-10-20',
+		readingTime: '4 min read',
+		tags: ['Websites', 'Client Support', 'Maintenance'],
+		kicker: 'Working together',
+		sections: [
+			{
+				paragraphs: [
+					'When you invest in a website or business system, you want to know it will work for your business—and that you’ll have someone to contact when you need help.',
+					'Maybe your staff need a little guidance. Maybe something isn’t working as expected. Or maybe you simply want to ask, “Is there an easier way to do this?”',
+					'That’s why I include after-launch support when you hire me to build your website or system. Finishing the project is one milestone. Helping you feel comfortable using it matters just as much.',
+					'Here’s what you can expect when we work together:',
+				],
+				bullets: [
+					{ title: '5 months of free maintenance.', description: 'Routine checks, updates, and upkeep within our agreed scope to help keep your website or system running smoothly.' },
+					{ title: '8 months of free bug support.', description: 'If a feature I delivered doesn’t work as agreed, I’ll fix it at no additional cost during the eight months after launch.' },
+					{ title: 'Technical advice and guidance.', description: 'You’re welcome to ask questions about your website, system, hosting, domain, or business email. I’ll explain what I can in clear, everyday language.' },
+					{ title: 'Free onboarding and training.', description: 'I’ll walk you and your team through the system, using the tasks you’ll actually handle each day.' },
+					{ title: 'A basic user guide.', description: 'Simple instructions you can refer to when you need a reminder about updating content, managing records, or completing other common tasks.' },
+					{ title: 'A follow-up check-in after launch.', description: 'Once you’ve had time to use the system, we’ll discuss how it’s working and anything you’re finding difficult.' },
+					{ title: 'Clear pricing for future improvements.', description: 'If you need additional features, I’ll explain the work and cost before we proceed.' },
+				],
+			},
+			{
+				heading: 'You don’t need to have everything figured out on day one',
+				paragraphs: [
+					'You might only discover what you need after using your system for a few weeks.',
+					'Perhaps a report takes too many steps to prepare. Your customers keep asking the same question. Or your team needs a clearer way to track orders.',
+					'Tell me about it. We can look at the problem together and decide whether it needs a simple adjustment, some guidance, or a new feature.',
+					'I already know how your system was built, so you won’t have to explain everything from the beginning each time you reach out.',
+				],
+			},
+			{
+				heading: 'Clear expectations from the start',
+				paragraphs: [
+					'The maintenance and bug support periods both begin at launch and run alongside each other. Bug support covers issues in the original work; new features and changes outside our agreement are quoted separately.',
+					'Before we begin, we’ll also confirm what maintenance includes and whether hosting, backups, and third-party services are part of your package. You’ll know what’s covered and what may involve an additional cost.',
+				],
+			},
+			{
+				heading: 'Someone to call when your business needs help',
+				paragraphs: [
+					'My goal is to build something useful for your business and make sure you feel confident using it.',
+					'When the free support period ends, we can discuss continued maintenance based on what you actually need. And when you’re ready to improve or expand your system, you’ll have someone familiar with your business to talk to.',
+					'Planning a website or business system? Let’s talk about what would make your everyday work easier.',
+				],
+				action: { label: 'View my work and get in touch', href: '/contact' },
+			},
+		],
+	},
 	{
 		slug: 'your-website-is-live-what-happens-next',
 		title: 'Your Website Is Live. What Happens Next?',

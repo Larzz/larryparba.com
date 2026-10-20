@@ -56,7 +56,7 @@ export default async function BlogPostPage ({ params }: BlogPostPageProps) {
 				<section className={styles.hero}>
 					<div className={`${styles.container} ${styles.articleHeader}`}>
 						<Link href='/blog' className={styles.backLink}>← Back to all articles</Link>
-						<span className={styles.kicker}>Engineering notes</span>
+						<span className={styles.kicker}>{post.kicker ?? 'Engineering notes'}</span>
 						<h1 className={styles.title}>{post.title}</h1>
 						<p className={styles.lead}>{post.excerpt}</p>
 						<div className={styles.articleMetaLarge}><span>{formatDate(post.publishedAt)}</span><span>·</span><span>{post.readingTime}</span><span>·</span><span>By Larry Parba</span></div>
@@ -65,7 +65,14 @@ export default async function BlogPostPage ({ params }: BlogPostPageProps) {
 
 				<section className={styles.section}>
 					<article className={`${styles.container} ${styles.articleBody}`}>
-						{post.sections.map((section, index) => <section key={`${section.heading ?? 'intro'}-${index}`}>{section.heading ? <h2>{section.heading}</h2> : null}{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.bullets ? <ul>{section.bullets.map(bullet => <li key={bullet}>{bullet}</li>)}</ul> : null}</section>)}
+						{post.sections.map((section, index) => (
+							<section key={`${section.heading ?? 'intro'}-${index}`}>
+								{section.heading ? <h2>{section.heading}</h2> : null}
+								{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+								{section.bullets ? <ul>{section.bullets.map(bullet => typeof bullet === 'string' ? <li key={bullet}>{bullet}</li> : <li key={bullet.title}><strong>{bullet.title}</strong> {bullet.description}</li>)}</ul> : null}
+								{section.action ? <Link href={section.action.href} className={styles.articleCta}>{section.action.label} →</Link> : null}
+							</section>
+						))}
 						<div className={styles.topicList}>{post.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
 					</article>
 				</section>

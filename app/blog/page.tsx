@@ -18,7 +18,7 @@ export default async function BlogPage () {
 				<section className={styles.hero}>
 					<div className={`${styles.container} ${styles.heroInner}`}>
 						<div><span className={styles.kicker}>Engineering notes</span><h1 className={styles.title}>Practical ideas from <span>building in production.</span></h1><p className={styles.lead}>Notes on application architecture, reliable infrastructure, useful automation, and the decisions behind maintainable systems.</p></div>
-						<p className={styles.heroNote}><strong>Built for Vercel storage</strong>The blog uses a simple data layer today, ready to move to a database for posts and Blob for cover images.</p>
+						<blockquote className={styles.heroNote}><strong>Build for what comes next.</strong>“The best digital systems don’t just work on launch day—they stay useful, understandable, and ready to grow with the business.”</blockquote>
 					</div>
 				</section>
 
