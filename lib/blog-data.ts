@@ -22,6 +22,89 @@ export interface BlogPost {
 // The UI only depends on getBlogPosts/getBlogPostBySlug, so these functions can
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
+{
+	"slug": "a-website-is-just-the-beginning",
+	"title": "A Website Is Just the Beginning",
+	"excerpt": "A website, a simple brand guide, and matching business materials you can keep using as your business grows.",
+	"publishedAt": "2026-10-21",
+	"readingTime": "3 min read",
+	"tags": [
+		"Websites",
+		"Branding",
+		"Business"
+	],
+	"kicker": "Beyond the website",
+	"sections": [
+		{
+			"paragraphs": [
+				"When you ask me to build your website, I want you to have something you can keep using as your business grows.",
+				"You might need to send a quotation tomorrow, introduce your business to a potential client next week, or print calling cards for an event. Having matching materials ready makes those everyday tasks a little easier.",
+				"That’s why I also help bring your brand together, beyond the pages of your website."
+			]
+		},
+		{
+			"heading": "A simple guide to your brand",
+			"paragraphs": [
+				"You’ll have a reference for your brand colors, fonts, and logo usage. So when you need a new flyer or social media post, you won’t have to guess which shade or font to use."
+			]
+		},
+		{
+			"heading": "Consistent website elements",
+			"paragraphs": [
+				"Your buttons, forms, headings, and page layouts will follow the same style. These details help customers find their way around your website and make future pages easier to add."
+			]
+		},
+		{
+			"heading": "A calling card that feels like your business",
+			"paragraphs": [
+				"Your calling card can match your website, with clear contact details and a QR code that takes people straight to it. It’s a small detail, but it helps people remember you after a conversation."
+			]
+		},
+		{
+			"heading": "Documents you can reuse",
+			"paragraphs": [
+				"Quotations, proposals, invoices, and company letters don’t have to look different every time. Branded templates give you a starting point—you just update the details and send them."
+			]
+		},
+		{
+			"heading": "Presentations you can confidently share",
+			"paragraphs": [
+				"Whether you’re introducing your company or explaining your services, a matching presentation template helps you put your ideas together without designing every slide from scratch."
+			]
+		},
+		{
+			"paragraphs": [
+				"We’ll agree on the materials included in your package before we start, so you know exactly what you’ll receive.",
+				"My goal is to make things easier for you, even after your website goes live. You’ll have useful materials you can work with, share with your team, and build on as your business grows.",
+				"Have a business in mind, or an existing one that needs a fresh look? Tell me about it at larryparba.com."
+			],
+			"action": {
+				"label": "Tell me about your business",
+				"href": "/contact"
+			}
+		},
+		{
+			"heading": "See a sample brand guideline",
+			"paragraphs": [
+				"Here’s a sample inspired by DavaoLease.ph, showing how a website’s colors, typography, and logo can carry through to calling cards, documents, and presentations. These are illustrative concepts; the materials in your own package will be agreed before we begin."
+			],
+			"action": {
+				"label": "Explore the DavaoLease brand sample",
+				"href": "/brand-samples/davaolease"
+			}
+		}
+	],
+	"faqs": [
+		{
+			"question": "Which branded materials are included?",
+			"answer": "We’ll agree on the materials included in your package before we start. These may include a brand guide, calling card, reusable documents, and a presentation template."
+		},
+		{
+			"question": "Can I see an example of a brand guideline?",
+			"answer": "The linked DavaoLease sample shows a coordinated palette, typography, logo guidance, website elements, and business material concepts."
+		}
+	]
+},
 	{
 		slug: 'a-website-comes-with-questions-mine-comes-with-support',
 		title: 'A Website Comes With Questions. Mine Comes With Support.',
