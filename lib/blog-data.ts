@@ -22,6 +22,126 @@ export interface BlogPost {
 // The UI only depends on getBlogPosts/getBlogPostBySlug, so these functions can
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
+	{
+		"slug": "when-two-websites-went-down-a-reminder-about-maintenance",
+		"title": "When Two Websites Went Down: A Reminder About Maintenance",
+		"excerpt": "What restoring Monili Jewellers and Transgulf taught me about troubleshooting, PHP environments, and the ongoing work of keeping business websites running.",
+		"publishedAt": "2026-10-22",
+		"readingTime": "4 min read",
+		"tags": [
+			"Websites",
+			"Maintenance",
+			"Troubleshooting"
+		],
+		"kicker": "Behind the scenes",
+		"sections": [
+			{
+				"paragraphs": [
+					"On October 21, two websites I help maintain, Monili Jewellers and Transgulf, experienced unexpected downtime. It was one of those days when everything seemed normal until, suddenly, it wasn’t.",
+					"If you’ve worked in web development for a while, you probably know the feeling. One minute, things are running smoothly. The next, you’re investigating errors, reviewing configurations, and trying to work out what changed.",
+					"Thankfully, both websites were back online after troubleshooting. The experience reminded me of something I often discuss with clients: launching a website is only the beginning. Keeping it running matters just as much."
+				]
+			},
+			{
+				"heading": "Getting the websites back online",
+				"paragraphs": [
+					"My first step was to investigate what was preventing the websites from loading properly. Was the problem in the application, a recent update, or the server configuration?",
+					"After reviewing the setup, I narrowed my attention to the PHP environment. Both websites were running on PHP 8.2. I moved them to PHP 8.3, checked the necessary configurations, and verified that they were loading and functioning again.",
+					"That resolved the immediate downtime. It sounds straightforward in a few sentences, but troubleshooting often means eliminating several possibilities before finding a change that restores service.",
+					"There’s an important distinction here: the update restored the websites, but that alone doesn’t confirm the exact underlying cause. Further review of the server logs would be needed to establish why the previous environment failed. It would be misleading to conclude that PHP 8.2 itself was broken."
+				]
+			},
+			{
+				"heading": "What PHP has to do with your website",
+				"paragraphs": [
+					"PHP is one of the programming languages used to build websites and web applications. Visitors may never see it, but it can handle work behind the scenes, such as customer accounts, product information, bookings, and other business features.",
+					"A website also depends on its database, application libraries, server configuration, and connected services. Those parts need to work together. A change in one part of that environment can affect the others.",
+					"That’s why updating software takes some care. A newer version can bring improvements, but the application and its dependencies still need to be compatible. Changing PHP versions is not a universal fix for a website that has gone offline."
+				]
+			},
+			{
+				"heading": "How I approached the troubleshooting",
+				"paragraphs": [
+					"I focused on understanding the problem before making unnecessary changes. Here’s a simplified account of the work:"
+				],
+				"bullets": [
+					{
+						"title": "Check the website errors.",
+						"description": "Investigate what is preventing the pages from loading and use that evidence to narrow the search."
+					},
+					{
+						"title": "Review the server environment.",
+						"description": "Look at the PHP setup and relevant configurations alongside the application’s requirements."
+					},
+					{
+						"title": "Update the PHP environment.",
+						"description": "In this incident, I changed PHP from 8.2 to 8.3 and checked the necessary configuration."
+					},
+					{
+						"title": "Verify the recovery.",
+						"description": "Check that both websites are loading and functioning again after the change."
+					}
+				]
+			},
+			{
+				"heading": "The work customers don’t see",
+				"paragraphs": [
+					"Many business owners only think about maintenance when something stops working. I understand why. If customers can browse products and submit inquiries, the website appears to be doing its job.",
+					"Behind the scenes, however, software may need updating, a security patch may be waiting, or a configuration may need attention. These tasks are easy to overlook because they don’t visibly change the homepage.",
+					"A website can work today and still need technical attention tomorrow. That doesn’t mean something is always wrong. It means the environment around it continues to change."
+				]
+			},
+			{
+				"heading": "Why maintenance matters to a business",
+				"paragraphs": [
+					"When a website becomes unavailable, a customer may be unable to send an inquiry, check a product, or continue a purchase. Even a short interruption can create frustration for people who depend on it.",
+					"Regular maintenance gives you a chance to address some problems before they interrupt that work. Depending on the website and the agreed scope, it can include:"
+				],
+				"bullets": [
+					"Keeping application software and the server environment updated.",
+					"Applying security patches and reviewing compatibility.",
+					"Monitoring availability and performance.",
+					"Keeping backups available and checking how recovery would work.",
+					"Testing important customer tasks after changes."
+				]
+			},
+			{
+				"heading": "Restoring service is one part of the job",
+				"paragraphs": [
+					"Maintenance cannot guarantee that a website will never go down. It can help reduce avoidable problems and make recovery easier when something does happen.",
+					"Every technical issue teaches me something. Sometimes the answer is an application fix; sometimes it’s a configuration change. In this case, updating the PHP environment was enough to restore service.",
+					"The next responsibility is to understand the incident as clearly as the evidence allows. A successful recovery and a confirmed root cause are different things. Keeping that distinction clear helps guide the follow-up work and avoids drawing the wrong conclusion."
+				]
+			},
+			{
+				"heading": "Give your website attention before it needs an urgent fix",
+				"paragraphs": [
+					"If you run a business, ask your developer about updates, backups, compatibility checks, and ongoing support. Agree on who handles those tasks and who you can contact when something goes wrong.",
+					"Your website represents your business online. Whether it’s a company website, an online store, or a custom system, it needs attention beyond its design and launch.",
+					"I’m glad both websites were back online. It was a busy troubleshooting day, and a reminder of why I enjoy this work. There’s a lot of satisfaction in helping the things you’ve built keep working for the people who depend on them.",
+					"I help businesses build, improve, and maintain their websites and custom systems. If you’re dealing with a technical issue, planning an upgrade, or looking for ongoing support, tell me what you need help with."
+				],
+				"action": {
+					"label": "Get help with your website",
+					"href": "/contact"
+				}
+			}
+		],
+		"faqs": [
+			{
+				"question": "Did PHP 8.2 cause the downtime?",
+				"answer": "Updating the PHP environment from 8.2 to 8.3 and checking the configuration restored service in this incident. That result alone does not establish the exact cause; further server-log review would be needed."
+			},
+			{
+				"question": "Will updating PHP fix every website issue?",
+				"answer": "No. The right change depends on the errors, application requirements, dependencies, and server configuration. Compatibility and website functionality need to be checked when making a version change."
+			},
+			{
+				"question": "Can maintenance prevent all downtime?",
+				"answer": "No. Maintenance can help reduce avoidable problems and make recovery easier through updates, monitoring, compatibility checks, and backups."
+			}
+		]
+	},
 {
 	"slug": "a-website-is-just-the-beginning",
 	"title": "A Website Is Just the Beginning",
