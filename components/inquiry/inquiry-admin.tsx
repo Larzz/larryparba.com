@@ -1,5 +1,7 @@
 'use client'
 
+import { HalloweenLogo } from '@/components/site/halloween-logo'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket, faEnvelope, faPaperPlane, faRotate } from '@fortawesome/free-solid-svg-icons'
 import { FormEvent, useCallback, useEffect, useMemo, useState } from 'react'
@@ -122,7 +124,7 @@ export function InquiryAdmin () {
 	return (
 		<main className={styles.adminPage}>
 			<header className={styles.adminHeader}>
-				<div><div className={styles.adminMark}>LP</div><div><span>Private workspace</span><h1>Customer inquiries</h1></div></div>
+				<div><HalloweenLogo><span className={styles.adminMark}>LP</span></HalloweenLogo><div><span>Private workspace</span><h1>Customer inquiries</h1></div></div>
 				<div><button type='button' onClick={() => void loadInquiries()} disabled={loading} aria-label='Refresh inquiries'><FontAwesomeIcon icon={faRotate} /> Refresh</button><button type='button' onClick={() => void logout()}><FontAwesomeIcon icon={faArrowRightFromBracket} /> Sign out</button></div>
 			</header>
 

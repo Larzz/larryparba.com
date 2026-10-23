@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { HalloweenLogo } from '@/components/site/halloween-logo'
 import styles from './sample.module.css'
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function BrandSamplePage () {
 	return (
 		<main className={styles.guide}>
 			<nav className={styles.nav} aria-label='Brand guide navigation'>
-				<Link href='/blog/a-website-is-just-the-beginning'>← Back to the article</Link>
+				<HalloweenLogo><Link href='/blog/a-website-is-just-the-beginning'>← Back to the article</Link></HalloweenLogo>
 				<span>Sample guide · 01 / 2026</span>
 			</nav>
 			<header className={styles.cover}>

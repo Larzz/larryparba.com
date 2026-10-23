@@ -1,5 +1,7 @@
 'use client'
 
+import { HalloweenLogo } from '@/components/site/halloween-logo'
+
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -38,7 +40,7 @@ export function AdminLogin ({ configured }: { configured: boolean }) {
 	return (
 		<main className={styles.loginPage}>
 			<section className={styles.loginCard}>
-				<div className={styles.adminMark}>LP</div>
+				<HalloweenLogo><span className={styles.adminMark}>LP</span></HalloweenLogo>
 				<span className={styles.eyebrow}>Private workspace</span>
 				<h1>Customer inquiries</h1>
 				<p>Sign in to read messages, update their status, and send replies.</p>

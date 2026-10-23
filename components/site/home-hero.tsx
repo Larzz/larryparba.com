@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { HalloweenLogo } from './halloween-logo'
 import { useState } from 'react'
 
 import {
@@ -52,7 +53,7 @@ export function HomeHero () {
 			<section className={styles.card} aria-labelledby='hero-title'>
 				<header className={styles.header}>
 					<Link href='/' className={styles.brand} aria-label='Larry Parba home'>
-						LARRY<span>.</span>
+						<HalloweenLogo>LARRY<span>.</span></HalloweenLogo>
 					</Link>
 
 					<nav className={styles.desktopNavigation} aria-label='Main navigation'>
