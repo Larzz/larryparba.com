@@ -1,7 +1,9 @@
 export interface BlogSection {
 	heading?: string
 	paragraphs: string[]
+	quote?: string
 	bullets?: Array<string | { title: string, description: string }>
+	steps?: Array<{ title: string, description: string }>
 	action?: { label: string, href: string }
 }
 
@@ -22,6 +24,108 @@ export interface BlogPost {
 // The UI only depends on getBlogPosts/getBlogPostBySlug, so these functions can
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
+	{
+		slug: 'what-is-mcp-model-context-protocol',
+		title: 'What Is MCP? A Simple Guide to Connecting AI With Your Business Tools',
+		excerpt: 'Learn what MCP (Model Context Protocol) is, how it connects AI to business tools, and where APIs, permissions, and practical use cases fit in.',
+		publishedAt: '2026-10-26',
+		readingTime: '4 min read',
+		tags: ['MCP', 'AI', 'Integrations'],
+		kicker: 'AI integration',
+		sections: [
+			{
+				paragraphs: [
+					'AI can help you write an email, explain code, or brainstorm a business idea. But when your question depends on information inside your own system, the conversation often turns into copying and pasting.',
+					'You export a report, upload a document, or explain how your application works. When the information changes, you repeat the process.',
+					'As a web developer, that is the problem I find interesting about MCP: giving an AI application a structured way to work with the tools and information a business already uses.',
+				],
+			},
+			{
+				heading: 'What does MCP mean?',
+				paragraphs: [
+					'MCP stands for **Model Context Protocol**. It is an open standard for connecting AI applications to external systems, including files, databases, and software tools.',
+					'Think of it as a common connection format. Instead of every AI application needing a completely different integration for every service, compatible applications and servers can communicate through MCP.',
+					'The official documentation compares it to a USB-C port for AI. The connection follows a shared standard, while what you can actually do depends on the connected system and its capabilities.',
+				],
+			},
+			{
+				heading: 'What could this look like in a business?',
+				paragraphs: [
+					'Imagine you manage an online store and want to ask:',
+				],
+				quote: 'Which products are running low on stock?',
+			},
+			{
+				paragraphs: [
+					'An AI application cannot answer that accurately from general knowledge. It needs access to your inventory information.',
+					'With a suitable MCP integration, the application could request current stock levels through a tool your developer has made available, then explain the results in plain language.',
+					'Other possible requests might include:',
+				],
+				bullets: [
+					'Show orders that still need processing.',
+					'Summarize sales for a selected date range.',
+					'Find the return policy in our internal documentation.',
+					"Prepare a draft reply using an order's delivery status.",
+				],
+			},
+			{
+				paragraphs: [
+					'These are examples of what a developer could build. Connecting an MCP server does not automatically create every workflow or grant access to every part of a business.',
+				],
+			},
+			{
+				heading: 'How does MCP work?',
+				paragraphs: [
+					'There are three main parts:',
+				],
+				steps: [
+					{ title: 'The host:', description: 'the AI application you interact with.' },
+					{ title: 'The client:', description: 'the component inside that application that communicates with an MCP server.' },
+					{ title: 'The server:', description: 'the program that makes selected information or capabilities available.' },
+				],
+			},
+			{
+				paragraphs: [
+					'An MCP server can expose **tools**, such as checking an order; **resources**, such as reference documents; and **prompts**, which are reusable templates for particular interactions.',
+					'For the store example, a developer could create a narrowly defined tool called `get_low_stock_products`. The AI application could discover that tool, request its execution when relevant, and use the returned information in its answer.',
+					'The server and underlying application still need to enforce who is allowed to see that information.',
+				],
+			},
+			{
+				heading: 'Does MCP replace APIs?',
+				paragraphs: [
+					'MCP can work alongside existing APIs.',
+					'For a Laravel application, for example, an MCP server could call an existing service or API that already handles inventory. Laravel would continue to enforce validation, access rules, and business logic.',
+					'MCP provides a standard interface through which a compatible AI application can discover and request that capability. It does not remove the need to build the capability properly.',
+					'For a single fixed integration, a direct API connection may already be enough. I would consider MCP when supporting compatible AI clients or exposing several useful capabilities makes the extra work worthwhile.',
+				],
+			},
+			{
+				heading: 'Permissions still matter',
+				paragraphs: [
+					'Giving AI access to business tools deserves the same care as giving a staff member access to an admin dashboard.',
+					'My starting approach would be to expose a small set of read-only capabilities, return only the information needed, and check permissions on every request.',
+					'Actions such as issuing refunds, changing records, or sending messages need stronger controls. Where appropriate, the application should show the proposed action and require confirmation before it runs.',
+					'MCP does not make a connection automatically safe. Developers still need to review server trust, authentication, authorization, and how untrusted content might influence the AI application.',
+				],
+			},
+			{
+				heading: 'Where I would start',
+				paragraphs: [
+					'For a first project, I would choose one question people regularly need answered, such as “Which orders are waiting for processing?”',
+					'Then I would connect one carefully scoped tool, test it against real permission rules, and check whether the answer actually saves someone time.',
+					"That is the opportunity I see in MCP: making the information inside a system easier to use through conversation, while keeping the system's rules in place.",
+					'If you are exploring an AI integration for your website or business application, you can learn more about my work here.',
+				],
+				action: { label: 'Explore my work', href: '/projects' },
+			},
+		],
+		faqs: [
+			{ question: 'What does MCP stand for?', answer: 'MCP stands for Model Context Protocol, an open standard that helps AI applications connect to external systems such as files, databases, and software tools.' },
+			{ question: 'Does MCP replace an existing API?', answer: 'No. MCP can sit alongside an existing API or service layer, which should continue to enforce validation, permissions, and business rules.' },
+			{ question: 'Is an MCP connection automatically safe?', answer: 'No. Developers still need to evaluate server trust, authentication, authorization, data access, confirmation controls, and the effects of untrusted content.' },
+		],
+	},
 	{
 		slug: 'a-website-comes-with-questions-mine-comes-with-support',
 		title: 'A Website Comes With Questions. Mine Comes With Support.',

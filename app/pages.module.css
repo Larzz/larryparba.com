@@ -113,8 +113,11 @@
 .articleBody { max-width: 780px; }
 .articleBody h2 { margin: 42px 0 14px; color: var(--ink); font-family: var(--font-space-grotesk), Arial, sans-serif; font-size: 28px; letter-spacing: -.025em; }
 .articleBody p { margin: 0 0 20px; color: #334155; font-size: 17px; line-height: 1.9; }
-.articleBody ul { display: grid; gap: 10px; margin: 0 0 22px; padding-left: 22px; color: #334155; font-size: 16px; line-height: 1.75; }
+.articleBody p strong { color: var(--ink); font-weight: 700; }
+.articleBody p code { border: 1px solid #bae6fd; border-radius: 5px; background: var(--blue-soft); padding: 2px 6px; color: var(--blue-dark); font-family: var(--font-jetbrains-mono), monospace; font-size: .84em; }
+.articleBody ul, .articleBody ol { display: grid; gap: 10px; margin: 0 0 22px; padding-left: 22px; color: #334155; font-size: 16px; line-height: 1.75; }
 .articleBody li strong { color: var(--ink); }
+.articleBody blockquote { margin: 4px 0 24px; border-left: 3px solid #38bdf8; border-radius: 0 10px 10px 0; background: var(--blue-soft); padding: 18px 22px; color: var(--ink); font-family: var(--font-space-grotesk), Arial, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.55; }
 .articleCta { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; margin-top: 4px; border-radius: 9px; background: var(--blue); padding: 0 19px; color: #fff; font-family: var(--font-space-grotesk), Arial, sans-serif; font-size: 14px; font-weight: 700; box-shadow: 0 8px 20px rgba(2,132,199,.18); transition: background .18s ease; }
 .articleCta:hover { background: var(--blue-dark); }
 .backLink { display: inline-flex; margin-bottom: 24px; color: var(--blue-dark); font-size: 14px; font-weight: 700; }

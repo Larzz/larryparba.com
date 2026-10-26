@@ -48,6 +48,14 @@ function formatDate (date: string) {
 	return new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`))
 }
 
+function renderInlineFormatting (text: string) {
+	return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part, index) => {
+		if (part.startsWith('**') && part.endsWith('**')) return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>
+		if (part.startsWith('`') && part.endsWith('`')) return <code key={`${part}-${index}`}>{part.slice(1, -1)}</code>
+		return part
+	})
+}
+
 export default async function BlogPostPage ({ params }: BlogPostPageProps) {
 	const post = await getBlogPostBySlug((await params).slug)
 	if (!post) notFound()
@@ -123,8 +131,10 @@ export default async function BlogPostPage ({ params }: BlogPostPageProps) {
 						{post.sections.map((section, index) => (
 							<section key={`${section.heading ?? 'intro'}-${index}`}>
 								{section.heading ? <h2>{section.heading}</h2> : null}
-								{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+								{section.paragraphs.map(paragraph => <p key={paragraph}>{renderInlineFormatting(paragraph)}</p>)}
+								{section.quote ? <blockquote>{section.quote}</blockquote> : null}
 								{section.bullets ? <ul>{section.bullets.map(bullet => typeof bullet === 'string' ? <li key={bullet}>{bullet}</li> : <li key={bullet.title}><strong>{bullet.title}</strong> {bullet.description}</li>)}</ul> : null}
+								{section.steps ? <ol>{section.steps.map(step => <li key={step.title}><strong>{step.title}</strong> {step.description}</li>)}</ol> : null}
 								{section.action ? <Link href={section.action.href} className={styles.articleCta}>{section.action.label} →</Link> : null}
 							</section>
 						))}
