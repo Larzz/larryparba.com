@@ -25,7 +25,6 @@ export interface BlogPost {
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
 	{
-<<<<<<< HEAD
 		slug: 'what-is-mcp-model-context-protocol',
 		title: 'What Is MCP? A Simple Guide to Connecting AI With Your Business Tools',
 		excerpt: 'Learn what MCP (Model Context Protocol) is, how it connects AI to business tools, and where APIs, permissions, and practical use cases fit in.',
@@ -127,7 +126,7 @@ const posts: BlogPost[] = [
 			{ question: 'Is an MCP connection automatically safe?', answer: 'No. Developers still need to evaluate server trust, authentication, authorization, data access, confirmation controls, and the effects of untrusted content.' },
 		],
 	},
-=======
+	{
 		"slug": "when-two-websites-went-down-a-reminder-about-maintenance",
 		"title": "When Two Websites Went Down: A Reminder About Maintenance",
 		"excerpt": "What restoring Monili Jewellers and Transgulf taught me about troubleshooting, PHP environments, and the ongoing work of keeping business websites running.",
@@ -330,7 +329,6 @@ const posts: BlogPost[] = [
 		}
 	]
 },
->>>>>>> c8d76f7d8601c3ba6b0a8d1087c24df5164284ef
 	{
 		slug: 'a-website-comes-with-questions-mine-comes-with-support',
 		title: 'A Website Comes With Questions. Mine Comes With Support.',
