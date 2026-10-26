@@ -25,6 +25,7 @@ export interface BlogPost {
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
 	{
+<<<<<<< HEAD
 		slug: 'what-is-mcp-model-context-protocol',
 		title: 'What Is MCP? A Simple Guide to Connecting AI With Your Business Tools',
 		excerpt: 'Learn what MCP (Model Context Protocol) is, how it connects AI to business tools, and where APIs, permissions, and practical use cases fit in.',
@@ -126,6 +127,210 @@ const posts: BlogPost[] = [
 			{ question: 'Is an MCP connection automatically safe?', answer: 'No. Developers still need to evaluate server trust, authentication, authorization, data access, confirmation controls, and the effects of untrusted content.' },
 		],
 	},
+=======
+		"slug": "when-two-websites-went-down-a-reminder-about-maintenance",
+		"title": "When Two Websites Went Down: A Reminder About Maintenance",
+		"excerpt": "What restoring Monili Jewellers and Transgulf taught me about troubleshooting, PHP environments, and the ongoing work of keeping business websites running.",
+		"publishedAt": "2026-10-22",
+		"readingTime": "4 min read",
+		"tags": [
+			"Websites",
+			"Maintenance",
+			"Troubleshooting"
+		],
+		"kicker": "Behind the scenes",
+		"sections": [
+			{
+				"paragraphs": [
+					"On October 21, two websites I help maintain, Monili Jewellers and Transgulf, experienced unexpected downtime. It was one of those days when everything seemed normal until, suddenly, it wasn’t.",
+					"If you’ve worked in web development for a while, you probably know the feeling. One minute, things are running smoothly. The next, you’re investigating errors, reviewing configurations, and trying to work out what changed.",
+					"Thankfully, both websites were back online after troubleshooting. The experience reminded me of something I often discuss with clients: launching a website is only the beginning. Keeping it running matters just as much."
+				]
+			},
+			{
+				"heading": "Getting the websites back online",
+				"paragraphs": [
+					"My first step was to investigate what was preventing the websites from loading properly. Was the problem in the application, a recent update, or the server configuration?",
+					"After reviewing the setup, I narrowed my attention to the PHP environment. Both websites were running on PHP 8.2. I moved them to PHP 8.3, checked the necessary configurations, and verified that they were loading and functioning again.",
+					"That resolved the immediate downtime. It sounds straightforward in a few sentences, but troubleshooting often means eliminating several possibilities before finding a change that restores service.",
+					"There’s an important distinction here: the update restored the websites, but that alone doesn’t confirm the exact underlying cause. Further review of the server logs would be needed to establish why the previous environment failed. It would be misleading to conclude that PHP 8.2 itself was broken."
+				]
+			},
+			{
+				"heading": "What PHP has to do with your website",
+				"paragraphs": [
+					"PHP is one of the programming languages used to build websites and web applications. Visitors may never see it, but it can handle work behind the scenes, such as customer accounts, product information, bookings, and other business features.",
+					"A website also depends on its database, application libraries, server configuration, and connected services. Those parts need to work together. A change in one part of that environment can affect the others.",
+					"That’s why updating software takes some care. A newer version can bring improvements, but the application and its dependencies still need to be compatible. Changing PHP versions is not a universal fix for a website that has gone offline."
+				]
+			},
+			{
+				"heading": "How I approached the troubleshooting",
+				"paragraphs": [
+					"I focused on understanding the problem before making unnecessary changes. Here’s a simplified account of the work:"
+				],
+				"bullets": [
+					{
+						"title": "Check the website errors.",
+						"description": "Investigate what is preventing the pages from loading and use that evidence to narrow the search."
+					},
+					{
+						"title": "Review the server environment.",
+						"description": "Look at the PHP setup and relevant configurations alongside the application’s requirements."
+					},
+					{
+						"title": "Update the PHP environment.",
+						"description": "In this incident, I changed PHP from 8.2 to 8.3 and checked the necessary configuration."
+					},
+					{
+						"title": "Verify the recovery.",
+						"description": "Check that both websites are loading and functioning again after the change."
+					}
+				]
+			},
+			{
+				"heading": "The work customers don’t see",
+				"paragraphs": [
+					"Many business owners only think about maintenance when something stops working. I understand why. If customers can browse products and submit inquiries, the website appears to be doing its job.",
+					"Behind the scenes, however, software may need updating, a security patch may be waiting, or a configuration may need attention. These tasks are easy to overlook because they don’t visibly change the homepage.",
+					"A website can work today and still need technical attention tomorrow. That doesn’t mean something is always wrong. It means the environment around it continues to change."
+				]
+			},
+			{
+				"heading": "Why maintenance matters to a business",
+				"paragraphs": [
+					"When a website becomes unavailable, a customer may be unable to send an inquiry, check a product, or continue a purchase. Even a short interruption can create frustration for people who depend on it.",
+					"Regular maintenance gives you a chance to address some problems before they interrupt that work. Depending on the website and the agreed scope, it can include:"
+				],
+				"bullets": [
+					"Keeping application software and the server environment updated.",
+					"Applying security patches and reviewing compatibility.",
+					"Monitoring availability and performance.",
+					"Keeping backups available and checking how recovery would work.",
+					"Testing important customer tasks after changes."
+				]
+			},
+			{
+				"heading": "Restoring service is one part of the job",
+				"paragraphs": [
+					"Maintenance cannot guarantee that a website will never go down. It can help reduce avoidable problems and make recovery easier when something does happen.",
+					"Every technical issue teaches me something. Sometimes the answer is an application fix; sometimes it’s a configuration change. In this case, updating the PHP environment was enough to restore service.",
+					"The next responsibility is to understand the incident as clearly as the evidence allows. A successful recovery and a confirmed root cause are different things. Keeping that distinction clear helps guide the follow-up work and avoids drawing the wrong conclusion."
+				]
+			},
+			{
+				"heading": "Give your website attention before it needs an urgent fix",
+				"paragraphs": [
+					"If you run a business, ask your developer about updates, backups, compatibility checks, and ongoing support. Agree on who handles those tasks and who you can contact when something goes wrong.",
+					"Your website represents your business online. Whether it’s a company website, an online store, or a custom system, it needs attention beyond its design and launch.",
+					"I’m glad both websites were back online. It was a busy troubleshooting day, and a reminder of why I enjoy this work. There’s a lot of satisfaction in helping the things you’ve built keep working for the people who depend on them.",
+					"I help businesses build, improve, and maintain their websites and custom systems. If you’re dealing with a technical issue, planning an upgrade, or looking for ongoing support, tell me what you need help with."
+				],
+				"action": {
+					"label": "Get help with your website",
+					"href": "/contact"
+				}
+			}
+		],
+		"faqs": [
+			{
+				"question": "Did PHP 8.2 cause the downtime?",
+				"answer": "Updating the PHP environment from 8.2 to 8.3 and checking the configuration restored service in this incident. That result alone does not establish the exact cause; further server-log review would be needed."
+			},
+			{
+				"question": "Will updating PHP fix every website issue?",
+				"answer": "No. The right change depends on the errors, application requirements, dependencies, and server configuration. Compatibility and website functionality need to be checked when making a version change."
+			},
+			{
+				"question": "Can maintenance prevent all downtime?",
+				"answer": "No. Maintenance can help reduce avoidable problems and make recovery easier through updates, monitoring, compatibility checks, and backups."
+			}
+		]
+	},
+{
+	"slug": "a-website-is-just-the-beginning",
+	"title": "A Website Is Just the Beginning",
+	"excerpt": "A website, a simple brand guide, and matching business materials you can keep using as your business grows.",
+	"publishedAt": "2026-10-21",
+	"readingTime": "3 min read",
+	"tags": [
+		"Websites",
+		"Branding",
+		"Business"
+	],
+	"kicker": "Beyond the website",
+	"sections": [
+		{
+			"paragraphs": [
+				"When you ask me to build your website, I want you to have something you can keep using as your business grows.",
+				"You might need to send a quotation tomorrow, introduce your business to a potential client next week, or print calling cards for an event. Having matching materials ready makes those everyday tasks a little easier.",
+				"That’s why I also help bring your brand together, beyond the pages of your website."
+			]
+		},
+		{
+			"heading": "A simple guide to your brand",
+			"paragraphs": [
+				"You’ll have a reference for your brand colors, fonts, and logo usage. So when you need a new flyer or social media post, you won’t have to guess which shade or font to use."
+			]
+		},
+		{
+			"heading": "Consistent website elements",
+			"paragraphs": [
+				"Your buttons, forms, headings, and page layouts will follow the same style. These details help customers find their way around your website and make future pages easier to add."
+			]
+		},
+		{
+			"heading": "A calling card that feels like your business",
+			"paragraphs": [
+				"Your calling card can match your website, with clear contact details and a QR code that takes people straight to it. It’s a small detail, but it helps people remember you after a conversation."
+			]
+		},
+		{
+			"heading": "Documents you can reuse",
+			"paragraphs": [
+				"Quotations, proposals, invoices, and company letters don’t have to look different every time. Branded templates give you a starting point—you just update the details and send them."
+			]
+		},
+		{
+			"heading": "Presentations you can confidently share",
+			"paragraphs": [
+				"Whether you’re introducing your company or explaining your services, a matching presentation template helps you put your ideas together without designing every slide from scratch."
+			]
+		},
+		{
+			"paragraphs": [
+				"We’ll agree on the materials included in your package before we start, so you know exactly what you’ll receive.",
+				"My goal is to make things easier for you, even after your website goes live. You’ll have useful materials you can work with, share with your team, and build on as your business grows.",
+				"Have a business in mind, or an existing one that needs a fresh look? Tell me about it at larryparba.com."
+			],
+			"action": {
+				"label": "Tell me about your business",
+				"href": "/contact"
+			}
+		},
+		{
+			"heading": "See a sample brand guideline",
+			"paragraphs": [
+				"Here’s a sample inspired by DavaoLease.ph, showing how a website’s colors, typography, and logo can carry through to calling cards, documents, and presentations. These are illustrative concepts; the materials in your own package will be agreed before we begin."
+			],
+			"action": {
+				"label": "Explore the DavaoLease brand sample",
+				"href": "/brand-samples/davaolease"
+			}
+		}
+	],
+	"faqs": [
+		{
+			"question": "Which branded materials are included?",
+			"answer": "We’ll agree on the materials included in your package before we start. These may include a brand guide, calling card, reusable documents, and a presentation template."
+		},
+		{
+			"question": "Can I see an example of a brand guideline?",
+			"answer": "The linked DavaoLease sample shows a coordinated palette, typography, logo guidance, website elements, and business material concepts."
+		}
+	]
+},
+>>>>>>> c8d76f7d8601c3ba6b0a8d1087c24df5164284ef
 	{
 		slug: 'a-website-comes-with-questions-mine-comes-with-support',
 		title: 'A Website Comes With Questions. Mine Comes With Support.',

@@ -1,0 +1,22 @@
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.pumpkin {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: 0;
+  bottom: -5px;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgb(55 25 10 / 20%));
+  transform: rotate(12deg);
+}
+
+@media print {
+  .pumpkin { display: none; }
+}

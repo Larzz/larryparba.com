@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation'
 import { ReactNode, useState } from 'react'
 
 import brandLogo from '@/app/icon3.png'
+import { HalloweenLogo } from './halloween-logo'
 import { InquiryWidget } from '@/components/inquiry/inquiry-widget'
 import { profile } from '@/lib/resume-data'
 import styles from './site-shell.module.css'
@@ -36,7 +37,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 					<div className={styles.headerInner}>
 						<div className={styles.brandGroup}>
 							<Link href='/' className={styles.brand} aria-label='Larry Parba home'>
-								<Image className={styles.brandLogo} src={brandLogo} alt='' priority />
+								<HalloweenLogo><Image className={styles.brandLogo} src={brandLogo} alt='' priority /></HalloweenLogo>
 								<span className={styles.brandCopy}>
 									<span className={styles.brandName}>Larry Parba</span>
 									<span className={styles.availability}><span className={styles.statusDot} />Available for projects</span>
@@ -90,7 +91,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 				<div className={styles.drawerBackdrop} onClick={() => setMenuOpen(false)}>
 					<aside className={styles.drawer} onClick={(event) => event.stopPropagation()} aria-label='Mobile navigation'>
 						<div className={styles.drawerHeading}>
-							<span className={styles.brand}><Image className={styles.brandLogo} src={brandLogo} alt='' /><span className={styles.brandName}>Larry Parba</span></span>
+							<span className={styles.brand}><HalloweenLogo><Image className={styles.brandLogo} src={brandLogo} alt='' /></HalloweenLogo><span className={styles.brandName}>Larry Parba</span></span>
 							<button type='button' onClick={() => setMenuOpen(false)} aria-label='Close navigation menu'><FontAwesomeIcon icon={faXmark} /></button>
 						</div>
 						<nav>
@@ -112,7 +113,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 				<div className={styles.container}>
 					<div className={styles.footerMain}>
 						<div>
-							<Link href='/' className={styles.footerBrand}><Image className={styles.footerLogo} src={brandLogo} alt='' /> Larry Parba</Link>
+							<Link href='/' className={styles.footerBrand}><HalloweenLogo><Image className={styles.footerLogo} src={brandLogo} alt='' /></HalloweenLogo> Larry Parba</Link>
 							<p>Full-stack digital engineering &amp; infrastructure consultancy.</p>
 						</div>
 						<nav aria-label='Footer navigation'>
