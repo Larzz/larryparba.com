@@ -17,8 +17,6 @@ import styles from './site-shell.module.css'
 const navItems = [
 	{ href: '/#services', label: 'Services' },
 	{ href: '/#pipeline', label: 'AI Pipeline' },
-	{ href: '/website-package', label: 'Website Package' },
-	{ href: '/business-email', label: 'Business Email' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/blog', label: 'Blog' },
 ]
@@ -119,7 +117,7 @@ export function SiteShell ({ children }: SiteShellProps) {
 							<p>Full-stack digital engineering &amp; infrastructure consultancy.</p>
 						</div>
 						<nav aria-label='Footer navigation'>
-							<Link href='/website-package'>Website Package</Link><Link href='/business-email'>Business Email</Link><Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/cv'>CV</Link><Link href='/#booking'>Consultation</Link><Link href='/contact'>Contact</Link>
+							<Link href='/about'>About</Link><Link href='/projects'>Projects</Link><Link href='/experience'>Experience</Link><Link href='/blog'>Blog</Link><Link href='/cv'>CV</Link><Link href='/#booking'>Consultation</Link><Link href='/contact'>Contact</Link>
 						</nav>
 					</div>
 					<div className={styles.footerBottom}>

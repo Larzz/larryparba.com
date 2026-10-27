@@ -1,3 +1,8 @@
 .note { margin-top: 28px; }
 .planFit { color: var(--blue-dark); font-size: 12px; font-weight: 700; }
 .emailPrice { color: var(--ink); font-size: 34px; letter-spacing: -.04em; }
+.providerSection + .providerSection { margin-top: 48px; }
+.providerHeading { margin-bottom: 20px; }
+.providerHeading span { color: var(--blue-dark); font-family: var(--font-jetbrains-mono), monospace; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.providerHeading h3 { margin: 7px 0 0; color: var(--ink); font-family: var(--font-space-grotesk), Arial, sans-serif; font-size: 25px; letter-spacing: -.025em; }
+.providerHeading p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
