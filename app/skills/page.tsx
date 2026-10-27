@@ -35,7 +35,7 @@ export default function ServicesPage () {
 						<div className={styles.cardGrid}>
 							{serviceSections.map((service, index) => <article className={styles.card} key={service.title}><span className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</span><h2>{service.title}</h2><p>{service.summary}</p><ul className={styles.tags}>{service.items.map(item => <li key={item}>{item}</li>)}</ul></article>)}
 						</div>
-						<div className={styles.actions}><Link href='/contact' className={styles.primaryLink}>Discuss your project</Link><Link href='/projects' className={styles.secondaryLink}>View selected work</Link></div>
+						<div className={styles.actions}><Link href='/website-package' className={styles.primaryLink}>Website package · AED 5,000</Link><Link href='/contact' className={styles.primaryLink}>Discuss your project</Link><Link href='/projects' className={styles.secondaryLink}>View selected work</Link></div>
 					</div>
 				</section>
 			</div>

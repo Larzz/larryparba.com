@@ -10,6 +10,8 @@ export default async function sitemap (): Promise<MetadataRoute.Sitemap> {
 	const latestPostDate = posts[0]?.updatedAt ?? posts[0]?.publishedAt
 
 	const staticRoutes: MetadataRoute.Sitemap = [
+		{ url: `${siteUrl}/business-email`, changeFrequency: 'monthly', priority: 0.8 },
+		{ url: `${siteUrl}/website-package`, changeFrequency: 'monthly', priority: 0.9 },
 		{ url: siteUrl, changeFrequency: 'monthly', priority: 1 },
 		{ url: `${siteUrl}/about`, changeFrequency: 'monthly', priority: 0.8 },
 		{ url: `${siteUrl}/projects`, changeFrequency: 'monthly', priority: 0.9 },
