@@ -1,6 +1,7 @@
 export interface BlogSection {
 	heading?: string
 	paragraphs: string[]
+	code?: { language: string, value: string }
 	quote?: string
 	bullets?: Array<string | { title: string, description: string }>
 	steps?: Array<{ title: string, description: string }>
@@ -24,6 +25,196 @@ export interface BlogPost {
 // The UI only depends on getBlogPosts/getBlogPostBySlug, so these functions can
 // later query Neon, Supabase, or another Vercel Marketplace database.
 const posts: BlogPost[] = [
+{
+	"slug": "learning-mcp-first-integration-one-week-plan",
+	"title": "Learning MCP: My First Integration and One-Week Plan",
+	"excerpt": "Learn MCP through a seven-day developer plan: design an order-status tool, test it with MCP Inspector, and connect it to a Laravel API.",
+	"publishedAt": "2026-10-27",
+	"readingTime": "5 min read",
+	"tags": [
+		"MCP",
+		"AI",
+		"Integrations",
+		"Laravel"
+	],
+	"kicker": "MCP Series · Part 2",
+	"sections": [
+		{
+			"paragraphs": [
+				"Understanding what MCP means is a useful start. The next step is being able to explain what happens when an AI application actually calls a tool.",
+				"In the first article, I introduced Model Context Protocol and how it connects AI applications to business systems. For this follow-up, I want to make that idea practical: one small project, a clear learning plan, and something I can inspect and test.",
+				"My target for one week is a working foundation. Full mastery will take more projects, debugging, and experience with real access controls."
+			],
+			"action": {
+				"label": "Read Part 1: What is MCP?",
+				"href": "/blog/what-is-mcp-model-context-protocol"
+			}
+		},
+		{
+			"heading": "Start with one read-only tool",
+			"paragraphs": [
+				"For a first exercise, I would build an MCP server with one read-only tool:",
+				"`get_order_status`",
+				"The question it should help answer is simple:"
+			],
+			"quote": "What is the status of order DEMO-1001?"
+		},
+		{
+			"paragraphs": [
+				"I would begin with fictional orders stored locally. That keeps the first exercise focused on the MCP interaction. A database connection can come after the tool behaves correctly.",
+				"For a delivery platform, this could later become a useful support feature. For now, it is a learning project—not a claim that the feature is already live."
+			]
+		},
+		{
+			"heading": "Follow the tool call",
+			"paragraphs": [
+				"A typical interaction looks like this:"
+			],
+			"steps": [
+				{
+					"title": "",
+					"description": "The user asks about an order in a compatible AI application."
+				},
+				{
+					"title": "",
+					"description": "The application discovers the server's available tools."
+				},
+				{
+					"title": "",
+					"description": "The model requests the relevant tool with an order reference."
+				},
+				{
+					"title": "",
+					"description": "The server validates the request, checks access, and retrieves the result."
+				},
+				{
+					"title": "",
+					"description": "The application receives that result and can explain it to the user."
+				}
+			]
+		},
+		{
+			"paragraphs": [
+				"MCP defines operations such as tools/list for discovering tools and tools/call for invoking one. The application still decides how it uses the returned information. [1]",
+				"That distinction matters: the model requests an operation, while the server executes the actual business logic."
+			]
+		},
+		{
+			"heading": "Design a clear tool",
+			"paragraphs": [
+				"A name such as process_data tells me very little. A name such as get_order_status gives both the developer and the AI application a clearer purpose.",
+				"For this exercise, I would describe the tool as:",
+				"Retrieve the current status of one demo order using its reference. This tool does not change the order.",
+				"An illustrative input could be:"
+			],
+			"code": {
+				"language": "json",
+				"value": "{\n  \"order_reference\": \"DEMO-1001\"\n}"
+			}
+		},
+		{
+			"paragraphs": [
+				"And the underlying business result could be:"
+			],
+			"code": {
+				"language": "json",
+				"value": "{\n  \"order_reference\": \"DEMO-1001\",\n  \"status\": \"preparing\",\n  \"updated_at\": \"2026-10-27T09:30:00+08:00\"\n}"
+			}
+		},
+		{
+			"paragraphs": [
+				"These examples show the tool's arguments and business data, rather than complete MCP protocol messages. An SDK handles the protocol response format.",
+				"I would also define what happens for an unknown reference, invalid input, or unavailable service. A failed lookup must not turn into a confident guess about an order."
+			]
+		},
+		{
+			"heading": "A focused week of practice",
+			"paragraphs": [
+				"I would set aside around 60–90 minutes each day and keep using the same project.",
+				"The official server tutorial provides a starting implementation. MCP Inspector lets developers test a server independently of a conversational AI interface. [2][3]",
+				"For the first exercise, I would use a local stdio connection. Remote access through Streamable HTTP would be a separate step. Client support and configuration should be checked against the chosen host's documentation."
+			]
+		},
+		{
+			"heading": "Keep permissions in the backend",
+			"paragraphs": [
+				"For an existing Laravel application, I would keep order permissions and business rules in Laravel.",
+				"A separate MCP server could call a restricted Laravel API. Another option is an MCP implementation within the application. The important design decision is where access rules are enforced.",
+				"An order reference supplied by the model is a lookup value. It is not proof that the person asking owns that order.",
+				"The backend needs to establish the caller's identity and check which records they can access. I would avoid exposing an unrestricted SQL tool just to answer a narrow order-status question."
+			]
+		},
+		{
+			"heading": "Test more than the happy path",
+			"paragraphs": [
+				"A successful request is only one part of the exercise. My test cases would include:"
+			],
+			"bullets": [
+				"A valid order belonging to the authenticated test user.",
+				"An unknown or malformed reference.",
+				"An order belonging to another user.",
+				"A backend timeout.",
+				"A request to cancel an order when only a read tool exists."
+			]
+		},
+		{
+			"paragraphs": [
+				"The final case tests whether the assistant stays within its available capabilities. It should explain the limitation rather than claim that it cancelled something.",
+				"I would also compare the assistant's answer with the actual tool result. A connected tool improves access to information; it does not guarantee that every sentence generated afterward is correct."
+			]
+		},
+		{
+			"heading": "What a useful foundation looks like",
+			"paragraphs": [
+				"My goal is to explain the whole path: user question, tool discovery, validated arguments, permission check, backend result, and final answer.",
+				"If I can build that small flow, test its failures, and recreate it from my notes, I have a useful foundation for the next project.",
+				"From there, I can explore resources, reusable prompts, remote servers, and carefully controlled write operations.",
+				"That is how I want to learn MCP: one working capability at a time, with enough understanding to know why it works.",
+				"If you are exploring AI integrations for a website or business application, you can learn more about my work at larryparba.com."
+			],
+			"action": {
+				"label": "Explore my work",
+				"href": "/projects"
+			}
+		},
+		{
+			"heading": "References",
+			"paragraphs": [],
+			"action": {
+				"label": "[1] Understanding MCP servers",
+				"href": "https://modelcontextprotocol.io/docs/learn/server-concepts"
+			}
+		},
+		{
+			"paragraphs": [],
+			"action": {
+				"label": "[2] Build an MCP server",
+				"href": "https://modelcontextprotocol.io/docs/develop/build-server"
+			}
+		},
+		{
+			"paragraphs": [],
+			"action": {
+				"label": "[3] MCP Inspector",
+				"href": "https://modelcontextprotocol.io/docs/tools/inspector"
+			}
+		}
+	],
+	"faqs": [
+		{
+			"question": "Can I master MCP in one week?",
+			"answer": "One week can establish a working foundation. Mastery takes further projects, debugging, and experience with real access controls."
+		},
+		{
+			"question": "What should my first MCP tool do?",
+			"answer": "Start with one read-only tool, such as get_order_status, using fictional local data. Define validation and failure behavior before adding a database."
+		},
+		{
+			"question": "Where should order permissions be checked?",
+			"answer": "The backend must establish the caller’s identity and enforce access to each order. An order reference supplied by a model is not proof of ownership."
+		}
+	]
+},
 	{
 		slug: 'what-is-mcp-model-context-protocol',
 		title: 'What Is MCP? A Simple Guide to Connecting AI With Your Business Tools',

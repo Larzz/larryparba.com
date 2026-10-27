@@ -172,3 +172,5 @@
 @media (prefers-reduced-motion: reduce) {
 	.card, .articleCard, .projectImage { transition: none; }
 }
+
+.codeBlock { max-width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: #0f172a; padding: 24px; color: #e2e8f0; font-family: var(--font-jetbrains-mono), monospace; font-size: 13px; line-height: 1.8; }

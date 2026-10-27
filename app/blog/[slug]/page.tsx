@@ -132,6 +132,7 @@ export default async function BlogPostPage ({ params }: BlogPostPageProps) {
 							<section key={`${section.heading ?? 'intro'}-${index}`}>
 								{section.heading ? <h2>{section.heading}</h2> : null}
 								{section.paragraphs.map(paragraph => <p key={paragraph}>{renderInlineFormatting(paragraph)}</p>)}
+								{section.code ? <pre className={styles.codeBlock} aria-label={`${section.code.language} example`}><code>{section.code.value}</code></pre> : null}
 								{section.quote ? <blockquote>{section.quote}</blockquote> : null}
 								{section.bullets ? <ul>{section.bullets.map(bullet => typeof bullet === 'string' ? <li key={bullet}>{bullet}</li> : <li key={bullet.title}><strong>{bullet.title}</strong> {bullet.description}</li>)}</ul> : null}
 								{section.steps ? <ol>{section.steps.map(step => <li key={step.title}><strong>{step.title}</strong> {step.description}</li>)}</ol> : null}
